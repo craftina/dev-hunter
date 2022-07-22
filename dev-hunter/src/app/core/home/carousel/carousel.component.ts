@@ -21,6 +21,7 @@ import { trigger, transition, style, animate, state } from "@angular/animations"
 export class CarouselComponent implements OnInit {
 
   @Input() slides: any;
+  rowHeight!: string | number;
 
   currentSlide: number = 1;
   isNext: boolean = true;
@@ -28,6 +29,7 @@ export class CarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.rowHeight = "20vh";
   }
 
   onPreviousClick() {

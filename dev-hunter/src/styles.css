@@ -6,3 +6,10 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     background-color: #e8e8ff;
 }
+
+app-root{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}

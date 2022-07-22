@@ -1,18 +1,8 @@
 mat-grid-list{
-    /* top: 40%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
-   /* overflow: auto; */
    background-color: #e8e8ff;
    color: #673ab7;
    text-align: center;
    align-items: center;
-   /* position: relative; */
-}
-
-mat-grid-tile{
-   /* height: fit-content; */
-   /* width: fit-content; */
 }
 
 h1{
@@ -22,11 +12,9 @@ h1{
 }
 
 mat-icon{
-   /* text-align: center; */
    height: 35px;
    width: 35px;
    font-size: 35px;
-   /* line-height: 35px; */
 }
 
 .mat-icon-button .mat-icon {
