@@ -1,0 +1,17 @@
+<mat-grid-list cols="5" rows="2">
+    <mat-grid-tile rowspan="2" colspan="1">
+        <button mat-icon-button (click)="onPreviousClick()">
+            <mat-icon>navigate_before</mat-icon>
+        </button>
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="2" colspan="3">
+        <ng-container *ngFor="let slide of slides; let i = index">
+            <h1 *ngIf="i+1 === currentSlide" @scaleInOut>{{slide[i+1]}}</h1>
+        </ng-container>
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="2" colspan="1">
+        <button mat-icon-button (click)="onNextClick()">
+            <mat-icon>navigate_next</mat-icon>
+        </button>
+    </mat-grid-tile>
+</mat-grid-list>

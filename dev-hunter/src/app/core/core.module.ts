@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { HomeComponent } from './home/home.component';
+import { CarouselComponent } from './home/carousel/carousel.component';
 
 const materialModules = [
   MatToolbarModule,
@@ -20,7 +22,9 @@ const materialModules = [
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    CarouselComponent
   ],
   imports: [
     CommonModule, 
@@ -28,7 +32,8 @@ const materialModules = [
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ]
 })
 export class CoreModule { }
