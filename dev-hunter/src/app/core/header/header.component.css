@@ -1,0 +1,15 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-list-base {
+    padding: 0;
+}
+
+mat-nav-list a {
+    margin: 0 1vw;
+}
+
+mat-toolbar{
+    position: relative;
+}

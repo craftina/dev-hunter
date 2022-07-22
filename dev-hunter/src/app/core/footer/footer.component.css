@@ -1,0 +1,18 @@
+i {
+    font-size: 15px;
+}
+
+mat-toolbar {
+    justify-content: center;
+    text-align: center;
+    height: fit-content;
+}
+
+.mat-divider {
+    border-top-color: rgba(255, 255, 255, 0.5);
+}
+
+div {
+    font-size: 15px;
+    margin-bottom: 0.5vw;
+}
