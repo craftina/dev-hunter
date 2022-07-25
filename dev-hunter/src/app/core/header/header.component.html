@@ -1,13 +1,46 @@
 <mat-toolbar color="primary">
-    <!-- <button mat-icon-button class="example-icon">
-        <mat-icon>menu</mat-icon>
-    </button> -->
-    <!-- <span class="example-spacer"></span> -->
-    <a matLine>DevHunter</a>
+    <!-- User => Menu -->
+    <div>
+        <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <ng-template matMenuContent>
+                <button mat-menu-item>Locations</button>
+                <button mat-menu-item>Technologies</button>
+                <button mat-menu-item>Developers</button>
+                <!-- <button mat-menu-item>Hired</button> -->
+                <button mat-menu-item>About us</button>
+                <button mat-menu-item>Contacts</button>
+            </ng-template>
+        </mat-menu>
+    </div>
     <span class="example-spacer"></span>
+
+    <!-- Heading -->
+    <div class="heading">
+        <button class="button" mat-button>
+            <a matLine>DevHunter</a>
+        </button>
+    </div>
+    <span class="example-spacer"></span>
+    
     <mat-nav-list>
-        <a matLine>Login</a>
-        <a matLine>Register</a>
-        <!-- <a matLine>Logout</a> -->
+
+        <!-- Guest -->
+        <!-- <button class="button" mat-button>
+            <a matLine>Login</a>
+        </button>
+        <button class="button" mat-button>
+            <a matLine>Register</a>
+        </button> -->
+
+        <!-- User -->
+        <button class="button" mat-button>
+            <a matLine>Logout</a>
+        </button>
+        <button class="button" mat-button>
+            <mat-icon>supervisor_account</mat-icon>
+        </button>
     </mat-nav-list>
 </mat-toolbar>

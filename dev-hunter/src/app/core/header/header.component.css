@@ -6,10 +6,32 @@
     padding: 0;
 }
 
-mat-nav-list a {
-    margin: 0 1vw;
+mat-nav-list{
+    text-align: right;
 }
 
-mat-toolbar{
-    position: relative;
+mat-toolbar > *{
+    width: 20vw;
+}
+
+.heading{
+    text-align: center;
+}
+
+.button {
+    font-size: 20px;
+}
+
+.mat-menu-item {
+    color: #673ab7;
+    padding: 0 6vw 0 2vw;
+    font-size: 18px;
+}
+
+.mat-menu-item:hover {
+    background: rgba(103, 58, 183, 1);
+}
+
+.mat-menu-item:hover {
+    color: #fff;
 }
