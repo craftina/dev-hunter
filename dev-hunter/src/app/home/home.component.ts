@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Slide } from './interfaces/slide.interface';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public slides = [
-    { 1: 'WELCOME TO DEV HUNTER' },
-    { 2: 'THE BIGGEST PLATFORM FOR HIRING DEVELOPERS' },
-    { 3: 'SOCIAL MEDIA' }
+  public slides : Slide[] = [
+    { id: 1,
+      text: 'WELCOME TO DEV HUNTER' },
+    { id: 2,
+      text: 'THE BIGGEST PLATFORM FOR HIRING DEVELOPERS' },
+    { id: 3,
+      text: 'SOCIAL MEDIA' }
   ];
 
   constructor() { }

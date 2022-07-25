@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const materialModules = [
   MatToolbarModule,
@@ -37,7 +38,9 @@ const materialModules = [
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
-    [...materialModules]
+    FontAwesomeModule,
+    [...materialModules
+  ]
   ],
   providers: [],
   bootstrap: [AppComponent]

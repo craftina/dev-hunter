@@ -6,7 +6,7 @@
     </mat-grid-tile>
     <mat-grid-tile rowspan="2" colspan="3">
         <ng-container *ngFor="let slide of slides; let i = index">
-            <h1 *ngIf="i+1 === currentSlide" @scaleInOut>{{slide[i+1]}}</h1>
+            <h1 *ngIf="i+1 === currentSlide" @scaleInOut>{{slide.text}}</h1>
         </ng-container>
     </mat-grid-tile>
     <mat-grid-tile rowspan="2" colspan="1">
