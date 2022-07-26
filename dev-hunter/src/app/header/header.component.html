@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <!-- User => Menu -->
-    <div>
+    <!-- <div>
         <button mat-button [matMenuTriggerFor]="menu">
             <mat-icon>menu</mat-icon>
         </button>
@@ -9,13 +9,13 @@
                 <button mat-menu-item>Locations</button>
                 <button mat-menu-item>Technologies</button>
                 <button mat-menu-item>Developers</button>
-                <!-- <button mat-menu-item>Hired</button> -->
+                <button mat-menu-item>Hired</button>
                 <button mat-menu-item>About us</button>
                 <button mat-menu-item>Contacts</button>
             </ng-template>
         </mat-menu>
-    </div>
-    <span class="example-spacer"></span>
+    </div> -->
+    <!-- <span class="example-spacer"></span> -->
 
     <!-- Heading -->
     <div class="heading">
@@ -28,19 +28,19 @@
     <mat-nav-list>
 
         <!-- Guest -->
-        <!-- <button class="button" mat-button>
-            <a matLine>Login</a>
+        <button class="button" mat-button>
+            <a matLine routerLink="auth/login">Login</a>
         </button>
         <button class="button" mat-button>
-            <a matLine>Register</a>
-        </button> -->
+            <a matLine routerLink="auth/register">Register</a>
+        </button>
 
         <!-- User -->
-        <button class="button" mat-button>
+        <!-- <button class="button" mat-button>
             <a matLine>Logout</a>
         </button>
         <button class="button" mat-button>
             <mat-icon>supervisor_account</mat-icon>
-        </button>
+        </button> -->
     </mat-nav-list>
 </mat-toolbar>

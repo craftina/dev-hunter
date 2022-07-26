@@ -5,13 +5,18 @@ import { HomeComponent } from "./home/home.component";
 const routes: Route[] = [
     {
         path: 'home',
-        component: HomeComponent,
+        component: HomeComponent
     },
     {
         path: '',
         pathMatch: 'full',
         redirectTo: 'home'
+    },
+    {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
     }
+
 ]
 
 @NgModule({
