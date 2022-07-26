@@ -39,8 +39,7 @@ const materialModules = [
     BrowserAnimationsModule,
     CoreModule,
     FontAwesomeModule,
-    [...materialModules
-  ]
+    [...materialModules]
   ],
   providers: [],
   bootstrap: [AppComponent]

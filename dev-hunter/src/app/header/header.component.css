@@ -6,15 +6,15 @@
     padding: 0;
 }
 
-mat-nav-list{
+mat-nav-list {
     text-align: right;
 }
 
-mat-toolbar > *{
+mat-toolbar>* {
     width: 20vw;
 }
 
-.heading{
+.heading {
     text-align: center;
 }
 
@@ -23,9 +23,9 @@ mat-toolbar > *{
 }
 
 .mat-menu-item {
-    color: #673ab7;
     padding: 0 6vw 0 2vw;
     font-size: 18px;
+    color: #673ab7;
 }
 
 .mat-menu-item:hover {

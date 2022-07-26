@@ -1,17 +1,17 @@
-mat-grid-list{
+mat-grid-list {
    background-color: #e8e8ff;
    color: #673ab7;
    text-align: center;
    align-items: center;
 }
 
-h1{
+h1 {
    font-weight: 700;
    font-size: 40px;
    line-height: 1.6;
 }
 
-mat-icon{
+mat-icon {
    height: 35px;
    width: 35px;
    font-size: 35px;
