@@ -11,7 +11,7 @@ const routes: Route[] = [
     children: [
       {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent 
       },
       {
         path: 'register',

@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Route, RouterModule } from "@angular/router";
+import { AuthModule } from "./auth/auth.module";
 import { HomeComponent } from "./home/home.component";
 
 const routes: Route[] = [
@@ -20,7 +21,10 @@ const routes: Route[] = [
 ]
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [
+        RouterModule.forRoot(routes),
+        AuthModule
+    ],
     exports: [RouterModule]
 
 })

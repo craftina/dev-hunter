@@ -1,1 +1,45 @@
-<p>register works!</p>
+<div id="register-section">
+    <mat-card class="login-form-card">
+
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <mat-card-header>
+                <mat-card-title>Register</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="name@example.com" formControlName="email" id="email" required>
+                        <mat-error>Invalid email</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" id="password" formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error>Password must contain at least 6 characters, one letter and one number</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Repeat your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" id="repassword"
+                            formControlName="repassword">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error>Password must be the same</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="submit-btn">
+                    <button mat-raised-button color="primary" type="submit">REGISTER</button>
+                </div>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>
