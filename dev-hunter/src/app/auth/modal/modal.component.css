@@ -1,0 +1,12 @@
+#modal {
+    padding: 1vw 3vw;
+}
+
+h1 {
+    color: rgba(103, 58, 183);
+}
+
+button {
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+}

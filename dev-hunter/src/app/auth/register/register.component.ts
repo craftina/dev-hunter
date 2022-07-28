@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { StorageService } from '../services/storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormValidators } from '../validators/form.validators';
+import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +26,8 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private authService: AuthService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    public dialog: MatDialog
   ) { }
 
   get emailFormCotrol(): FormControl {
@@ -81,7 +84,7 @@ export class RegisterComponent implements OnInit {
         }),
         error: (resp: HttpErrorResponse) => {
           this.errorMessage = resp.error;
-          window.alert(this.errorMessage)
+          this.dialog.open(ModalComponent, { data: this.errorMessage });
         }
       });
     }

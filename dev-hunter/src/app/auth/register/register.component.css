@@ -32,13 +32,11 @@ mat-card-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 mat-label {
     color: rgba(103, 58, 183);
 }
-
 
 input {
     padding-bottom: 0.3vw;
@@ -47,7 +45,6 @@ input {
 
 input::placeholder {
     color: rgba(103, 58, 183);
-
 }
 
 input:-webkit-autofill,
@@ -67,9 +64,8 @@ input:-webkit-autofill:focus {
 }
 
 .mat-form-field-appearance-fill {
-    padding: 0 0 0.5vw 0;
+    padding: 0 0 1vw 0;
 }
-
 
 mat-form-field {
     padding: 1vw 0;
