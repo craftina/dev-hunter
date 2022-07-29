@@ -9,11 +9,6 @@
       "email": "peter@gmail.com",
       "password": "$2a$10$44QQhLsMUQrU6h2LkuuKGOVTFEF881riy6UuQ8QvwKxx/POxSl5xK",
       "id": 2
-    },
-    {
-      "email": "name@mail.com",
-      "password": "$2a$10$hgR2ONTCsTCX1qDfkD6CxumrQhCGPQDU3hf8x1FwpGVYqwqQHADjq",
-      "id": 3
     }
   ],
   "locations": [

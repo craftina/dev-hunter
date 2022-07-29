@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { Login } from '../interfaces/login.interface';
-import { User } from '../interfaces/user.interface';
-import { AuthService } from '../services/auth.service';
-import { take } from 'rxjs/operators';
-import { Router } from '@angular/router';
-import { StorageService } from '../services/storage.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { take } from 'rxjs/operators';
+import { StorageService } from '../services/storage.service';
+import { AuthService } from '../services/auth.service';
+import { AuthResponse } from '../interfaces/authResponse.interface';
+import { User } from '../interfaces/user.interface';
 import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -30,13 +30,6 @@ export class LoginComponent implements OnInit {
     public dialog: MatDialog
   ) { }
 
-  get emailFormCotrol(): FormControl {
-    return this.formGroup.get('email') as FormControl;
-  }
-  get passwordFormCotrol(): FormControl {
-    return this.formGroup.get('password') as FormControl;
-  }
-
   ngOnInit(): void {
     this.formGroup = this.fb.group({
       email: ['', [
@@ -52,18 +45,18 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    let email = this.formGroup.get('email');
-    let password = this.formGroup.get('password');
+    const email = this.formGroup.get('email');
+    const password = this.formGroup.get('password');
 
     if (email?.valid && password?.valid) {
 
-      const user: Login = {
-        email: this.formGroup.value.email,
-        password: this.formGroup.value.password
+      const user: User = {
+        email: email.value,
+        password: password.value
       }
 
       this.authService.login$(user).pipe(take(1)).subscribe({
-        next: ((resp: User) => {
+        next: ((resp: AuthResponse) => {
           if (resp) {
             this.storageService.storeUserData(resp);
             this.router.navigate(['/home']);

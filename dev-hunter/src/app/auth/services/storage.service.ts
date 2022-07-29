@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { User } from "../interfaces/user.interface";
+import { AuthResponse } from "../interfaces/authResponse.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -7,8 +7,7 @@ import { User } from "../interfaces/user.interface";
 
 export class StorageService {
 
-    storeUserData(user: User): void {
-        delete user.password;
+    storeUserData(user: AuthResponse): void {
         localStorage.setItem('loggedUser', JSON.stringify(user));
     }
 
