@@ -16,15 +16,16 @@ const routes: Route[] = [
     {
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    },
+    {
+        path: '**',
+        redirectTo: 'home'
     }
 
 ]
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(routes),
-        AuthModule
-    ],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 
 })

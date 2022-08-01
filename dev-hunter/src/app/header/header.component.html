@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <!-- User => Menu -->
-    <!-- <div>
+    <div *ngIf="loggedUser">
         <button mat-button [matMenuTriggerFor]="menu">
             <mat-icon>menu</mat-icon>
         </button>
@@ -14,8 +14,8 @@
                 <button mat-menu-item>Contacts</button>
             </ng-template>
         </mat-menu>
-    </div> -->
-    <!-- <span class="example-spacer"></span> -->
+    </div>
+    <span *ngIf="loggedUser" class="example-spacer"></span>
 
     <!-- Heading -->
     <div class="heading">
@@ -28,19 +28,23 @@
     <mat-nav-list>
 
         <!-- Guest -->
-        <button class="button" mat-button routerLink="auth/login">
-            <a matLine>Login</a>
-        </button>
-        <button class="button" mat-button routerLink="auth/register">
-            <a matLine>Register</a>
-        </button>
+        <div *ngIf="!loggedUser">
+            <button class="button" mat-button routerLink="auth/login">
+                <a matLine>Login</a>
+            </button>
+            <button class="button" mat-button routerLink="auth/register">
+                <a matLine>Register</a>
+            </button>
+        </div>
 
         <!-- User -->
-        <!-- <button class="button" mat-button>
-            <a matLine>Logout</a>
-        </button>
-        <button class="button" mat-button>
-            <mat-icon>supervisor_account</mat-icon>
-        </button> -->
+        <div *ngIf="loggedUser">
+            <button class="button" mat-button (click)="onLogout()">
+                <a matLine>Logout</a>
+            </button>
+            <button class="button" mat-button>
+                <mat-icon>supervisor_account</mat-icon>
+            </button>
+        </div>
     </mat-nav-list>
 </mat-toolbar>

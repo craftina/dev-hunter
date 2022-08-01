@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         Validators.minLength(6),
         Validators.pattern(/(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]/g)
       ]]
-    })
+    });
   }
 
   onSubmit(): void {
