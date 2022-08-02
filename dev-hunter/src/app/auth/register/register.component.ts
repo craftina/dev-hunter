@@ -58,17 +58,17 @@ export class RegisterComponent implements OnInit {
     let password = this.formGroup.get('password');
     let repassword = this.formGroup.get('repassword');
 
-    if (email?.valid && password?.valid && repassword?.valid) {
+    if (this.formGroup.valid) {
 
       const user: User = {
-        email: email.value,
-        password: password.value
+        email: email!.value,
+        password: password!.value
       }
 
       this.authService.register$(user).pipe(take(1)).subscribe({
         next: ((resp: AuthResponse) => {
           if (resp) {
-            this.storageService.storeUserData(resp);
+            this.storageService.storeUserData(resp.accessToken);
             this.router.navigate(['/home']);
           }
         }),

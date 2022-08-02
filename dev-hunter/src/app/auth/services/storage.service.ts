@@ -1,24 +1,26 @@
 import { Injectable } from "@angular/core";
 import { AuthResponse } from "../interfaces/authResponse.interface";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
-
 export class StorageService {
-    public storageSubject: BehaviorSubject<AuthResponse> = new BehaviorSubject(this.getUserFromStorage());
+    private storageSubject: BehaviorSubject<string> = new BehaviorSubject(this.getUserFromStorage());
+    getAccessTokenSubject$(): Observable<string> {
+        return this.storageSubject.asObservable();
+    }
 
-    storeUserData(user: AuthResponse): void {
-        localStorage.setItem('loggedUser', JSON.stringify(user));
-        this.storageSubject.next(user);
+    storeUserData(accessToken: string): void {
+        localStorage.setItem('accessToken', accessToken);
+        this.storageSubject.next(accessToken);
     }
-    
-    getUserFromStorage(): AuthResponse {
-        return JSON.parse(localStorage.getItem('loggedUser')!);
+
+    getUserFromStorage(): string {
+        return localStorage.getItem('accessToken')!;
     }
-    
-    clearUser(): void{
+
+    clearUser(): void {
         localStorage.clear();
     }
 

@@ -8,7 +8,6 @@ import { User } from "../interfaces/user.interface";
 @Injectable({
     providedIn: 'root'
 })
-
 export class AuthService {
 
     private url = `${environment.apiUrl}`;

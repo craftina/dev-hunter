@@ -48,17 +48,17 @@ export class LoginComponent implements OnInit {
     const email = this.formGroup.get('email');
     const password = this.formGroup.get('password');
 
-    if (email?.valid && password?.valid) {
+    if (this.formGroup.valid) {
 
       const user: User = {
-        email: email.value,
-        password: password.value
+        email: email!.value,
+        password: password!.value
       }
 
       this.authService.login$(user).pipe(take(1)).subscribe({
         next: ((resp: AuthResponse) => {
           if (resp) {
-            this.storageService.storeUserData(resp);
+            this.storageService.storeUserData(resp.accessToken);
             this.router.navigate(['/home']);
           }
         }),
