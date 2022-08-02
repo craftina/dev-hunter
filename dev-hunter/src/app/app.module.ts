@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -16,8 +18,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AuthModule } from './auth/auth.module';
 
 const materialModules = [
   MatToolbarModule,
@@ -42,7 +42,7 @@ const materialModules = [
     BrowserAnimationsModule,
     CoreModule,
     FontAwesomeModule,
-    AuthModule,
+    HttpClientModule,
     [...materialModules]
   ],
   providers: [],
