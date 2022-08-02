@@ -21,15 +21,10 @@ const routes: Route[] = [
         path: '**',
         redirectTo: 'home'
     }
-
 ]
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
-
 })
-
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule { }

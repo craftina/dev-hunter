@@ -21,5 +21,4 @@ export class AuthService {
     register$(data: User): Observable<AuthResponse> {
         return this.http.post<AuthResponse>(`${environment.apiUrl}/register`, data);
     }
-
 }

@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { AuthResponse } from "../interfaces/authResponse.interface";
 import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
@@ -23,5 +22,4 @@ export class StorageService {
     clearUser(): void {
         localStorage.clear();
     }
-
 }
