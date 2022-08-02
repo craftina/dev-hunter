@@ -52,7 +52,6 @@ export class RegisterComponent implements OnInit {
       })
   }
 
-
   onSubmit(): void {
     let email = this.formGroup.get('email');
     let password = this.formGroup.get('password');
@@ -67,7 +66,7 @@ export class RegisterComponent implements OnInit {
       this.authService.register$(user).pipe(take(1)).subscribe({
         next: ((resp: AuthResponse) => {
           if (resp) {
-            this.storageService.storeUserData(resp.accessToken);
+            this.storageService.storeAccessToken(resp.accessToken);
             this.router.navigate(['/home']);
           }
         }),

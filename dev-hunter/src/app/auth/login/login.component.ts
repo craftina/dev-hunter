@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
       this.authService.login$(user).pipe(take(1)).subscribe({
         next: ((resp: AuthResponse) => {
           if (resp) {
-            this.storageService.storeUserData(resp.accessToken);
+            this.storageService.storeAccessToken(resp.accessToken);
             this.router.navigate(['/home']);
           }
         }),

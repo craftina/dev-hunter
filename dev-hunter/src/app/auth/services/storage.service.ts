@@ -5,21 +5,21 @@ import { BehaviorSubject, Observable } from "rxjs";
     providedIn: 'root'
 })
 export class StorageService {
-    private storageSubject: BehaviorSubject<string> = new BehaviorSubject(this.getUserFromStorage());
+    private storageSubject: BehaviorSubject<string> = new BehaviorSubject(this.getAccessToken());
     getAccessTokenSubject$(): Observable<string> {
         return this.storageSubject.asObservable();
     }
 
-    storeUserData(accessToken: string): void {
+    storeAccessToken(accessToken: string): void {
         localStorage.setItem('accessToken', accessToken);
         this.storageSubject.next(accessToken);
     }
 
-    getUserFromStorage(): string {
+    getAccessToken(): string {
         return localStorage.getItem('accessToken')!;
     }
 
-    clearUser(): void {
-        localStorage.clear();
+    removeAccessToken(): void {
+        localStorage.removeItem('accessToken');
     }
 }

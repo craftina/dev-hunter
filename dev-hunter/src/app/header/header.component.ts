@@ -27,13 +27,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
       })
   }
 
-  onLogout(): void {
-    this.storageService.clearUser();
-    window.location.href = 'home';
-  }
-
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
+  }
+  
+  onLogout(): void {
+    this.storageService.removeAccessToken();
+    window.location.href = 'home';
   }
 }
