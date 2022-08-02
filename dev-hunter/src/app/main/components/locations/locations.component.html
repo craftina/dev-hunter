@@ -1,1 +1,7 @@
-<p>locations works!</p>
+<div id="locations">
+    <mat-grid-list cols="3">
+        <mat-grid-tile *ngFor="let location of locations">
+            <app-location-card [location]="location" ></app-location-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
