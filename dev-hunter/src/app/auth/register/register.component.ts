@@ -56,7 +56,6 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     let email = this.formGroup.get('email');
     let password = this.formGroup.get('password');
-    let repassword = this.formGroup.get('repassword');
 
     if (this.formGroup.valid) {
 
