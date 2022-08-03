@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs';
 import { Location } from 'src/app/main/interfaces/location.interface';
 import { LocationService } from 'src/app/main/services/location.service';
@@ -15,56 +15,61 @@ export class LocationEditComponent implements OnInit {
 
   formGroup!: FormGroup;
   errorMessage!: string;
-  hide = true;
+  locationId!: number;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private route: ActivatedRoute,
     private locationService: LocationService,
-  ) { }
+  ) { 
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.locationId = +id;
+    }
+  }
 
   ngOnInit(): void {
-    this.formGroup = this.fb.group({
-      name: ['', [
-        Validators.required,
-      ]],
-      imgUrl: ['', [
-        Validators.pattern(/^\.\.\/\.\.\/\.\.\/assets\/images\//g)
-      ]],
-      mapLink: ['', [
-        Validators.pattern(/^https:\/\/www\.google\.com\/maps\/place\//g)
-      ]]
-    });
+    if (!this.locationId){
+      this.buildForm({name: '', imgUrl: '', mapLink: ''});
+    } else {
+      this.locationService.getLocationById$(this.locationId).subscribe({
+        next: (location: Location) => {
+          console.log(location);
+          this.buildForm(location);
+        }
+      })
+    }
   }
 
   onSubmit(): void{
-    const name = this.formGroup.get('name');
-    const imgUrl = this.formGroup.get('imgUrl');
-    const mapLink = this.formGroup.get('mapLink');
-    
 
     if (this.formGroup.valid) {
-
-      const location: Location = {
-        name: name!.value,
-        imgUrl: imgUrl!.value,
-        mapLink: mapLink!.value
-      }
-
-      this.locationService.createLocation$(location).pipe(take(1)).subscribe({
-        next: ((resp: Location) => {
-          if (resp) {
+      this.locationService.saveLocation$(this.formGroup.value).pipe(take(1)).subscribe({
+        next: (() => {
             this.router.navigate(['/locations']);
-          }
         }),
         error: (resp: HttpErrorResponse) => {
           this.errorMessage = resp.error;
-          // this.dialog.open(ModalComponent, { data: this.errorMessage });
           console.log(this.errorMessage);
-          
         }
       });
     }
+  }
+
+  private buildForm(location: Location): void {
+    this.formGroup = this.fb.group({
+      name: [location.name, [
+        Validators.required,
+      ]],
+      imgUrl: [location.imgUrl, [
+        Validators.pattern(/^\.\.\/\.\.\/\.\.\/assets\/images\//g)
+      ]],
+      mapLink: [location.mapLink, [
+        Validators.pattern(/^https:\/\/www\.google\.com\/maps\/place\//g)
+      ]],
+      id: location.id
+    });
   }
   }
 

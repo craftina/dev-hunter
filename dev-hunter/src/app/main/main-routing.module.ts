@@ -18,6 +18,10 @@ const routes: Route[] = [
         component: LocationEditComponent
       },
       {
+        path: 'locations/edit/:id',
+        component: LocationEditComponent
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'

@@ -17,8 +17,26 @@ export class LocationService {
         return this.http.get<Location[]>(this.url);
     }
 
+    getLocationById$(id: number): Observable<Location> {
+        return this.http.get<Location>(`${this.url}/${id}`)
+    }
+
+    saveLocation$(location: Location): Observable<Location> {
+        if (location.id) {
+            console.log('edit');
+            return this.editLocation$(location);
+        } else {
+            console.log('create');
+            return this.createLocation$(location);
+        }
+    }
+
     createLocation$(location: Location): Observable<Location> {
         return this.http.post<Location>(this.url, location);
+    }
+
+    editLocation$(location: Location): Observable<Location> {
+        return this.http.put<Location>(`${this.url}/${location.id}`, location);
     }
 
 }

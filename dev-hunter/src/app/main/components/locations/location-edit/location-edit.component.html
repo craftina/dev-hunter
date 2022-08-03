@@ -1,6 +1,6 @@
 <div id="location-form">
     <mat-card class="location-form-card">
-        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" *ngIf="formGroup">
             <mat-card-header>
                 <mat-card-title>Location Form</mat-card-title>
             </mat-card-header>
@@ -26,7 +26,7 @@
                     </mat-form-field>
                 </div>
                 <div class="submit-btn">
-                    <button mat-raised-button color="primary" type="submit">Create</button>
+                    <button mat-raised-button color="primary" type="submit">Save</button>
                 </div>
             </mat-card-content>
         </form>
