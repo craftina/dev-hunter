@@ -1,0 +1,30 @@
+#locations-heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vw;
+}
+
+h1{
+    color: rgba(103, 58, 183);
+    font-size: 34px;
+    font-weight: 700;
+}
+
+button{
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5vw 2vw;
+    font-size: 15px;
+}
+
+mat-grid-list {
+    height: 100%;
+}
+
+mat-grid-tile {
+    height: fit-content;
+
+}
+

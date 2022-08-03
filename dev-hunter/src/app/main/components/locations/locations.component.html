@@ -1,6 +1,10 @@
 <div id="locations">
-    <mat-grid-list cols="3">
-        <mat-grid-tile *ngFor="let location of locations">
+    <div id="locations-heading">
+        <h1>Locations</h1>
+        <button mat-button>Add Location</button>
+    </div>
+    <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
+        <mat-grid-tile  colspan="3" *ngFor="let location of locations">
             <app-location-card [location]="location" ></app-location-card>
         </mat-grid-tile>
     </mat-grid-list>

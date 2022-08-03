@@ -7,10 +7,14 @@ import { MainRoutingModule } from './main-routing.module';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 const materialModules = [
   MatGridListModule,
-  MatCardModule
+  MatCardModule,
+  MatIconModule,
+  MatButtonModule
 ];
 
 @NgModule({

@@ -1,0 +1,27 @@
+@use '@angular/material' as mat;
+@use "@angular/material/theming";
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$deep-purple-palette, 500);
+$my-accent: mat.define-palette(mat.$deep-purple-palette, 50);
+$my-foreground: mat.define-palette(mat.$deep-purple-palette, 50);
+$my-background: mat.define-palette(mat.$deep-purple-palette, 50);
+
+$my-theme: mat.define-light-theme((color: (primary: $my-primary,
+        accent: $my-accent,
+        //  foreground: $my-foreground,
+        //  background: $my-background
+      )));
+
+$dark-primary: mat.define-palette(mat.$deep-purple-palette, 50);
+$dark-accent: mat.define-palette(mat.$deep-purple-palette, 500);
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $dark-primary,
+   accent: $dark-accent,
+ )
+));
+
+@include mat.all-component-themes($my-theme);
+// @include mat.button-color($dark-theme);
