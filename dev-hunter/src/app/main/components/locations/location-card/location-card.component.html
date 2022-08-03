@@ -1,18 +1,24 @@
 <!-- <div class="mat-card-location"> -->
-    <mat-card class="mat-card-location">
-        <mat-card-content>
-            <img mat-card-image src={{location.imgUrl}} alt="Photo of a Shiba Inu">
-            <div class="text-on-hover">
-                <mat-icon>room</mat-icon>
-                <a href={{location.mapLink}}>Open in Maps</a>
-            </div>
-        </mat-card-content>
-        <mat-card-header>
-            <mat-card-title>{{location.name}}</mat-card-title>
-        </mat-card-header>
-        <mat-card-actions>
-            <button mat-button>Edit</button>
-            <button mat-button>Delete</button>
-          </mat-card-actions>
-    </mat-card>
+<mat-card class="mat-card-location">
+    <mat-card-content>
+        <div *ngIf="location.imgUrl !== '';then content else other_content"></div>
+        <ng-template #content>
+            <img mat-card-image class="hover-image" src={{location.imgUrl}} alt="Photo of a Shiba Inu">
+        </ng-template>
+        <ng-template #other_content>
+            <img mat-card-image src={{locationImageUrl}} alt="Photo of a Shiba Inu">
+        </ng-template>
+        <div class="text-on-hover" *ngIf="location.mapLink !== ''">
+            <mat-icon>room</mat-icon>
+            <a href={{location.mapLink}}>Open in Maps</a>
+        </div>
+    </mat-card-content>
+    <mat-card-header>
+        <mat-card-title>{{location.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+        <button mat-button>Edit</button>
+        <button mat-button>Delete</button>
+    </mat-card-actions>
+</mat-card>
 <!-- </div> -->

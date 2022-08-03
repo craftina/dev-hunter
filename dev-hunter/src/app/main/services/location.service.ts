@@ -9,12 +9,16 @@ import { Location } from "../interfaces/location.interface";
 })
 export class LocationService {
 
-    private url = `${environment.apiUrl}`;
+    private url = `${environment.apiUrl}/locations`;
 
     constructor(private http: HttpClient) { }
 
     getAllLocations$(): Observable<Location[]> {
-        return this.http.get<Location[]>(`${this.url}/locations`);
+        return this.http.get<Location[]>(this.url);
+    }
+
+    createLocation$(location: Location): Observable<Location> {
+        return this.http.post<Location>(this.url, location);
     }
 
 }

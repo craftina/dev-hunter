@@ -6,13 +6,9 @@ import { Location } from 'src/app/main/interfaces/location.interface';
   templateUrl: './location-card.component.html',
   styleUrls: ['./location-card.component.css']
 })
-export class LocationCardComponent implements OnInit {
+export class LocationCardComponent {
 
   @Input() location!: Location;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  locationImageUrl: string = '../../../assets/images/location-image.png';
 
 }

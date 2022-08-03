@@ -1,0 +1,34 @@
+<div id="location-form">
+    <mat-card class="location-form-card">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <mat-card-header>
+                <mat-card-title>Location Form</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>City</mat-label>
+                        <input matInput id="name" formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Image</mat-label>
+                        <input matInput id="imgUrl" placeholder="../../../assets/images/" formControlName="imgUrl">
+                        <mat-error>Image url is not correct!</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Link to Google Maps</mat-label>
+                        <input matInput id="mapLink" placeholder="https://www.google.com/maps/place/" formControlName="mapLink">
+                        <mat-error>Link is not correct!</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="submit-btn">
+                    <button mat-raised-button color="primary" type="submit">Create</button>
+                </div>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>

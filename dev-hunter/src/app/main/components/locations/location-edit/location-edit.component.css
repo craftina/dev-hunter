@@ -1,0 +1,73 @@
+/* .example-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+} */
+
+#location-form {
+    display: flex;
+    justify-content: center;
+}
+
+.location-form-card {
+    display: flex;
+    margin: 2vw 0;
+    padding: 3vw;
+    width: fit-content;
+    background-color: rgba(103, 58, 183, 0.2);
+    color: rgba(103, 58, 183);
+    border: 8px solid rgba(103, 58, 183);
+    border-radius: 20px;
+}
+
+mat-card-header {
+    justify-content: center;
+    padding-bottom: 2vw;
+}
+
+.mat-card-header .mat-card-title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+mat-label {
+    color: rgba(103, 58, 183);
+}
+
+input {
+    padding-bottom: 0.3vw;
+    font-size: 18px;
+}
+
+input::placeholder {
+    color: rgba(103, 58, 183);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.submit-btn {
+    text-align: center;
+    padding-top: 2vw;
+}
+
+.submit-btn button {
+    padding: 0 3vw;
+    width: 100%;
+    font-size: 17px;
+}
+
+.mat-form-field-appearance-fill {
+    padding: 0 0 1vw 0;
+}
+
+mat-form-field {
+    padding: 1vw 0;
+    width: 100%;
+}

@@ -1,7 +1,7 @@
 <div id="locations">
     <div id="locations-heading">
         <h1>Locations</h1>
-        <button mat-button>Add Location</button>
+        <button mat-button routerLink="create">Add Location</button>
     </div>
     <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
         <mat-grid-tile  colspan="3" *ngFor="let location of locations">

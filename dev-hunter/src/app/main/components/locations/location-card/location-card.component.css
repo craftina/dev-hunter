@@ -41,7 +41,7 @@ a {
     height: 100%;
 }
 
-mat-card-content:hover img {
+mat-card-content:hover .hover-image{
     opacity: 0.3;
 }
 

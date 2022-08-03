@@ -19,12 +19,8 @@ button{
     font-size: 15px;
 }
 
-mat-grid-list {
+app-location-card{
+    width: 100%;
     height: 100%;
-}
-
-mat-grid-tile {
-    height: fit-content;
-
 }
 
