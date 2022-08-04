@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
+import { ModalComponent } from './modal/modal.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const materialModules = [
   MatToolbarModule,
@@ -25,7 +27,8 @@ const materialModules = [
   MatListModule,
   MatButtonModule,
   MatGridListModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDialogModule
 ];
 
 @NgModule({
@@ -34,7 +37,8 @@ const materialModules = [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CarouselComponent
+    CarouselComponent,
+    ModalComponent
   ],
   imports: [
     AppRoutingModule,

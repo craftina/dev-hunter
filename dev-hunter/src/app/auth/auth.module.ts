@@ -5,14 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { ModalComponent } from './modal/modal.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
 
 
 const materialModules = [
@@ -21,7 +19,6 @@ const materialModules = [
   MatIconModule,
   MatInputModule,
   MatButtonModule,
-  MatDialogModule
 ]
 
 @NgModule({
@@ -29,7 +26,6 @@ const materialModules = [
     AuthComponent,
     LoginComponent,
     RegisterComponent,
-    ModalComponent
   ],
   imports: [
     CommonModule,

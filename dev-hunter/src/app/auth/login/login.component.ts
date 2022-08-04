@@ -7,7 +7,7 @@ import { StorageService } from '../services/storage.service';
 import { AuthService } from '../services/auth.service';
 import { AuthResponse } from '../interfaces/authResponse.interface';
 import { User } from '../interfaces/user.interface';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalComponent } from '../../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
 
 

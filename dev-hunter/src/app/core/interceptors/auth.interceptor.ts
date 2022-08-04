@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpEvent, HttpRequest, HttpHandler, HttpErrorResponse } from '@angular/common/http';
-import { catchError, EMPTY, Observable } from 'rxjs';
+import { catchError, EMPTY, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -24,7 +24,7 @@ export class AuthInterceptor implements HttpInterceptor {
                     localStorage.removeItem('accessToken');
                     this.router.navigate(['auth', 'login']);
                 }
-                return EMPTY;
+                return throwError(res);
             })
         );
     }
