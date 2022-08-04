@@ -22,7 +22,7 @@ export class LocationEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private locationService: LocationService,
-  ) { 
+  ) {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.locationId = +id;
@@ -30,8 +30,8 @@ export class LocationEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!this.locationId){
-      this.buildForm({name: '', imgUrl: '', mapLink: ''});
+    if (!this.locationId) {
+      this.buildForm({ name: '', imgUrl: '', mapLink: '' });
     } else {
       this.locationService.getLocationById$(this.locationId).subscribe({
         next: (location: Location) => {
@@ -42,12 +42,11 @@ export class LocationEditComponent implements OnInit {
     }
   }
 
-  onSubmit(): void{
-
+  onSubmit(): void {
     if (this.formGroup.valid) {
       this.locationService.saveLocation$(this.formGroup.value).pipe(take(1)).subscribe({
         next: (() => {
-            this.router.navigate(['/locations']);
+          this.router.navigate(['/locations']);
         }),
         error: (resp: HttpErrorResponse) => {
           this.errorMessage = resp.error;
@@ -71,5 +70,5 @@ export class LocationEditComponent implements OnInit {
       id: location.id
     });
   }
-  }
+}
 

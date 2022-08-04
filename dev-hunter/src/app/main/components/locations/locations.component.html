@@ -4,8 +4,9 @@
         <button mat-button routerLink="create">Add Location</button>
     </div>
     <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
-        <mat-grid-tile  colspan="3" *ngFor="let location of locations">
-            <app-location-card [location]="location" ></app-location-card>
+        <mat-grid-tile colspan="3" *ngFor="let location of locations">
+            <app-location-card [location]="location" (onDeleteEvent)="onDelete($event)" (onEditEvent)="onEdit($event)">
+            </app-location-card>
         </mat-grid-tile>
     </mat-grid-list>
 </div>

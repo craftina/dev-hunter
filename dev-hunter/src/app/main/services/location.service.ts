@@ -39,4 +39,8 @@ export class LocationService {
         return this.http.put<Location>(`${this.url}/${location.id}`, location);
     }
 
+    deleteLocation$(id: number): Observable<void> {
+        return this.http.delete<void>(`${this.url}/${id}`);
+    }
+
 }
