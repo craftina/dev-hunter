@@ -12,19 +12,20 @@ import { LocationService } from '../../services/location.service';
 export class LocationsComponent implements OnInit {
 
   locations!: Location[];
+  loading: boolean = true;
 
   constructor(
-    private getService: LocationService,
+    private locationService: LocationService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.getService.getAllLocations$().pipe(take(1)).subscribe({
+    this.locationService.getAllLocations$().pipe(take(1)).subscribe({
       next: ((resp: Location[]) => {
+        this.loading = false;
         this.locations = resp;
       })
-    }
-    )
+    })
   }
 
   onEdit(location: Location): void {
@@ -32,10 +33,10 @@ export class LocationsComponent implements OnInit {
   }
 
   onDelete(location: Location): void {
-    this.getService.deleteLocation$(location.id!).pipe(take(1)).subscribe({
+    this.locationService.deleteLocation$(location.id!).pipe(take(1)).subscribe({
       next: (() => {
         this.locations = this.locations.filter(l => l.id !== location.id);
       })
-    });
+    })
   }
 }

@@ -20,5 +20,4 @@ export class LocationCardComponent {
   onClickDelete(location: Location): void {
     this.onDeleteEvent.emit(location);
   }
-
 }

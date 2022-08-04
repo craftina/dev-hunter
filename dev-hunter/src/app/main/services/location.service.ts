@@ -18,15 +18,13 @@ export class LocationService {
     }
 
     getLocationById$(id: number): Observable<Location> {
-        return this.http.get<Location>(`${this.url}/${id}`)
+        return this.http.get<Location>(`${this.url}/${id}`);
     }
 
     saveLocation$(location: Location): Observable<Location> {
         if (location.id) {
-            console.log('edit');
             return this.editLocation$(location);
         } else {
-            console.log('create');
             return this.createLocation$(location);
         }
     }
@@ -42,5 +40,4 @@ export class LocationService {
     deleteLocation$(id: number): Observable<void> {
         return this.http.delete<void>(`${this.url}/${id}`);
     }
-
 }
