@@ -16,4 +16,8 @@ export class DeveloperService {
     getDevelopersByLocationId$(locationId: number): Observable<Developer[]> {
         return this.http.get<Developer[]>(`${this.url}/?locationId_like=${locationId}`);
     }
+
+    getDevelopersByTechnologyId$(technologyId: number): Observable<Developer[]> {
+        return this.http.get<Developer[]>(`${this.url}/?technologyId_like=${technologyId}`);
+    }
 }

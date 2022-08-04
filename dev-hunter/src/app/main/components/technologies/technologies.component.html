@@ -1,0 +1,16 @@
+<div id="technologies">
+    <div id="technologies-heading">
+        <h1>Technologies</h1>
+        <button mat-button routerLink="create">Add Technology</button>
+    </div>
+    <div class="spinner" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="empty" *ngIf="technologies && technologies.length === 0">There is no listed technologies!</div>
+    <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
+        <mat-grid-tile colspan="3" *ngFor="let technology of technologies">
+            <!-- <app-location-card [technology]="technology" (onDeleteEvent)="onDelete($event)" (onEditEvent)="onEdit($event)"> -->
+            <!-- </app-location-card> -->
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

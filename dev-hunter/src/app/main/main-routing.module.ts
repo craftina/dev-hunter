@@ -3,6 +3,7 @@ import { Route, RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { LocationsComponent } from './components/locations/locations.component';
 import { LocationEditComponent } from './components/locations/location-edit/location-edit.component';
+import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 const routes: Route[] = [
   {
@@ -20,6 +21,10 @@ const routes: Route[] = [
       {
         path: 'locations/edit/:id',
         component: LocationEditComponent
+      },
+      {
+        path: 'technologies',
+        component: TechnologiesComponent
       },
       {
         path: '',
