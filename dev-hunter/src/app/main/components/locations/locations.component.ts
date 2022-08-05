@@ -38,7 +38,7 @@ export class LocationsComponent implements OnInit {
   }
 
   onDelete(location: Location): void {
-        this.developers = this.locations[location.id!].developers!;
+        this.developers = this.locations.find((x: Location) => x.id === location.id)!.developers!;
         const devCount = this.developers.length;
 
         if (devCount < 1) {
