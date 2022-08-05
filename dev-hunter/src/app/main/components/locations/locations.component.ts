@@ -38,10 +38,9 @@ export class LocationsComponent implements OnInit {
   }
 
   onDelete(location: Location): void {
-    this.locationService.getLocationWithDevelopers$(location.id!).pipe(take(1)).subscribe({
-      next: ((res) => {
-        this.developers = res.developers!;
+        this.developers = this.locations[location.id!].developers!;
         const devCount = this.developers.length;
+
         if (devCount < 1) {
           this.locationService.deleteLocation$(location.id!).pipe(take(1)).subscribe({
             next: (() => {
@@ -54,7 +53,5 @@ export class LocationsComponent implements OnInit {
             data: `You cannot delete this location, ${devText} has been assigned to it.`
           });
         }
-      })
-    })
   }
 }
