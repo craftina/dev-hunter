@@ -1,5 +1,8 @@
+import { Developer } from "./developer.interface";
+
 export interface Technology{
     name: string,
     imgUrl: string,
-    id?: number
+    id?: number,
+    developers?: Developer[]
 }

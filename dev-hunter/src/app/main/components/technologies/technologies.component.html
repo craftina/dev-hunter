@@ -9,8 +9,9 @@
     <div class="empty" *ngIf="technologies && technologies.length === 0">There is no listed technologies!</div>
     <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
         <mat-grid-tile colspan="3" *ngFor="let technology of technologies">
-            <!-- <app-location-card [technology]="technology" (onDeleteEvent)="onDelete($event)" (onEditEvent)="onEdit($event)"> -->
-            <!-- </app-location-card> -->
+            <app-technology-card [technology]="technology" (onDeleteEvent)="onDelete($event)"
+                (onEditEvent)="onEdit($event)">
+            </app-technology-card>
         </mat-grid-tile>
     </mat-grid-list>
 </div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Technology } from '../../interfaces/technology.interface';
 import { Developer } from '../../interfaces/developer.interface';
 import { TechnologyService } from '../../services/technology.service';
-import { DeveloperService } from '../../services/developer.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/modal/modal.component';
@@ -21,7 +20,6 @@ export class TechnologiesComponent implements OnInit {
 
   constructor(
     private technologyService: TechnologyService,
-    private developerService: DeveloperService,
     private router: Router,
     private dialog: MatDialog
   ) { }
@@ -40,17 +38,21 @@ export class TechnologiesComponent implements OnInit {
   }
 
   onDelete(technology: Technology): void {
-    this.developerService.getDevelopersByTechnologyId$(technology.id!).pipe(take(1)).subscribe({
+    this.technologyService.getTechnologyWithDevelopers$(technology.id!).pipe(take(1)).subscribe({
       next: ((res) => {
-        this.developers = res;
-        if (this.developers.length < 1) {
+        this.developers = res.developers!;
+        const devCount = this.developers.length;
+        if (devCount < 1) {
           this.technologyService.deleteTechnology$(technology.id!).pipe(take(1)).subscribe({
             next: (() => {
               this.technologies = this.technologies.filter(l => l.id !== technology.id);
             })
           })
         } else {
-          this.dialog.open(ModalComponent, { data: "You cannot delete this location, a developer has been assigned to it." });
+          const devText = devCount > 1 ? `${devCount} developers` : '1 developer';
+          this.dialog.open(ModalComponent, {
+            data: `You cannot delete this technology, ${devText} has been assigned to it.`
+          });
         }
       })
     })

@@ -4,6 +4,7 @@ import { MainComponent } from './components/main/main.component';
 import { LocationsComponent } from './components/locations/locations.component';
 import { LocationEditComponent } from './components/locations/location-edit/location-edit.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { TechnologyEditComponent } from './components/technologies/technology-edit/technology-edit.component';
 
 const routes: Route[] = [
   {
@@ -25,6 +26,14 @@ const routes: Route[] = [
       {
         path: 'technologies',
         component: TechnologiesComponent
+      },
+      {
+        path: 'technologies/create',
+        component: TechnologyEditComponent
+      },
+      {
+        path: 'technologies/edit/:id',
+        component: TechnologyEditComponent
       },
       {
         path: '',

@@ -4,6 +4,9 @@ import { MainComponent } from './components/main/main.component';
 import { LocationsComponent } from './components/locations/locations.component';
 import { LocationCardComponent } from './components/locations/location-card/location-card.component';
 import { LocationEditComponent } from './components/locations/location-edit/location-edit.component';
+import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { TechnologyCardComponent } from './components/technologies/technology-card/technology-card.component';
+import { TechnologyEditComponent } from './components/technologies/technology-edit/technology-edit.component';
 import { MainRoutingModule } from './main-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -14,7 +17,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 const materialModules = [
   MatGridListModule,
@@ -32,7 +34,9 @@ const materialModules = [
     LocationsComponent,
     LocationCardComponent,
     LocationEditComponent,
-    TechnologiesComponent
+    TechnologiesComponent,
+    TechnologyCardComponent,
+    TechnologyEditComponent
   ],
   imports: [
     CommonModule,

@@ -21,6 +21,10 @@ export class TechnologyService {
         return this.http.get<Technology>(`${this.url}/${id}`);
     }
 
+    getTechnologyWithDevelopers$(id: number): Observable<Technology> {
+        return this.http.get<Technology>(`${this.url}/${id}?_embed=developers`);
+    }
+
     saveTechnology$(technology: Technology): Observable<Technology> {
         if (technology.id) {
             return this.editTechnology$(technology);
@@ -30,7 +34,7 @@ export class TechnologyService {
     }
 
     createTechnology$(technology: Technology): Observable<Technology> {
-        return this.http.post<Technology>(this.url, technology);
+        return this.http.post<Technology>(`${this.url}/1`, technology);
     }
 
     editTechnology$(technology: Technology): Observable<Technology> {
