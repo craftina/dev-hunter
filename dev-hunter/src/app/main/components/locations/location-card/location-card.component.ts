@@ -9,15 +9,17 @@ import { Location } from 'src/app/main/interfaces/location.interface';
 export class LocationCardComponent {
 
   @Input() location!: Location;
+
   @Output() onDeleteEvent = new EventEmitter<Location>();
   @Output() onEditEvent = new EventEmitter<Location>();
+  
   locationImageUrl: string = '../../../assets/images/location-image.png';
 
-  onClickEdit(location: Location): void {
-    this.onEditEvent.emit(location);
+  onClickEdit(): void {
+    this.onEditEvent.emit(this.location);
   }
 
-  onClickDelete(location: Location): void {
-    this.onDeleteEvent.emit(location);
+  onClickDelete(): void {
+    this.onDeleteEvent.emit(this.location);
   }
 }
