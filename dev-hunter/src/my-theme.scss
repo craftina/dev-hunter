@@ -8,14 +8,21 @@ $my-accent: mat.define-palette(mat.$deep-purple-palette, 50);
 $my-foreground: mat.define-palette(mat.$deep-purple-palette, 50);
 $my-background: mat.define-palette(mat.$deep-purple-palette, 50);
 
-$my-light-theme: mat.define-light-theme((color: (primary: $my-primary,
-        accent: $my-accent,
-      )));
+$my-light-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+  )
+));
 
 $dark-primary: mat.define-palette(mat.$deep-purple-palette, 50);
 $dark-accent: mat.define-palette(mat.$deep-purple-palette, 500);
-$dark-theme: mat.define-dark-theme((color: (primary: $dark-primary,
-        accent: $dark-accent,
-      )));
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+  )
+));
 
 @include mat.all-component-themes($my-light-theme);

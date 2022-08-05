@@ -16,7 +16,6 @@ import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 
-
 const materialModules = [
   MatGridListModule,
   MatCardModule,

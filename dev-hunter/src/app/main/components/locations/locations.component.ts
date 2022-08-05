@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { Developer } from '../../interfaces/developer.interface';
 import { Location } from '../../interfaces/location.interface';
-import { DeveloperService } from '../../services/developer.service';
 import { LocationService } from '../../services/location.service';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -21,7 +20,6 @@ export class LocationsComponent implements OnInit {
 
   constructor(
     private locationService: LocationService,
-    private developerService: DeveloperService,
     private router: Router,
     private dialog: MatDialog
   ) { }
@@ -40,17 +38,21 @@ export class LocationsComponent implements OnInit {
   }
 
   onDelete(location: Location): void {
-    this.developerService.getDevelopersByLocationId$(location.id!).pipe(take(1)).subscribe({
+    this.locationService.getLocationWithDevelopers$(location.id!).pipe(take(1)).subscribe({
       next: ((res) => {
-        this.developers = res;
-        if (this.developers.length < 1) {
+        this.developers = res.developers!;
+        const devCount = this.developers.length;
+        if (devCount < 1) {
           this.locationService.deleteLocation$(location.id!).pipe(take(1)).subscribe({
             next: (() => {
               this.locations = this.locations.filter(l => l.id !== location.id);
             })
           })
         } else {
-          this.dialog.open(ModalComponent, { data: "You cannot delete this location, a developer has been assigned to it." });
+          const devText = devCount > 1 ? `${devCount} developers` : '1 developer';
+          this.dialog.open(ModalComponent, {
+            data: `You cannot delete this location, ${devText} has been assigned to it.`
+          });
         }
       })
     })

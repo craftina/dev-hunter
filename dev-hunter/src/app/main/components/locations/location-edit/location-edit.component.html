@@ -2,13 +2,7 @@
     <mat-card class="location-form-card">
         <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" *ngIf="formGroup">
             <mat-card-header>
-                <div *ngIf="locationId; then edit else create"></div>
-                <ng-template #edit>
-                    <mat-card-title>Edit Location</mat-card-title>
-                </ng-template>
-                <ng-template #create>
-                    <mat-card-title>Create Location</mat-card-title>
-                </ng-template>
+                    <mat-card-title>{{ locationId ? 'Edit' : 'Create'}} Location</mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <div>
@@ -20,7 +14,7 @@
                 <div>
                     <mat-form-field appearance="fill">
                         <mat-label>Image</mat-label>
-                        <input matInput id="imgUrl" placeholder="../../../assets/images/" formControlName="imgUrl">
+                        <input matInput id="imgUrl" placeholder="https://....." formControlName="imgUrl">
                         <mat-error>Image url is not correct!</mat-error>
                     </mat-form-field>
                 </div>

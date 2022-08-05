@@ -20,6 +20,10 @@ export class LocationService {
     getLocationById$(id: number): Observable<Location> {
         return this.http.get<Location>(`${this.url}/${id}`);
     }
+    
+    getLocationWithDevelopers$(id: number): Observable<Location> {
+        return this.http.get<Location>(`${this.url}/${id}?_embed=developers`);
+    }
 
     saveLocation$(location: Location): Observable<Location> {
         if (location.id) {
