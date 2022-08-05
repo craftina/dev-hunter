@@ -14,17 +14,13 @@ export class LocationService {
     constructor(private http: HttpClient) { }
 
     getAllLocations$(): Observable<Location[]> {
-        return this.http.get<Location[]>(this.url);
+        return this.http.get<Location[]>(`${this.url}?_embed=developers`);
     }
 
     getLocationById$(id: number): Observable<Location> {
         return this.http.get<Location>(`${this.url}/${id}`);
     }
     
-    getLocationWithDevelopers$(id: number): Observable<Location> {
-        return this.http.get<Location>(`${this.url}/${id}?_embed=developers`);
-    }
-
     saveLocation$(location: Location): Observable<Location> {
         if (location.id) {
             return this.editLocation$(location);
