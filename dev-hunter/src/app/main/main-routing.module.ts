@@ -5,6 +5,7 @@ import { LocationsComponent } from './components/locations/locations.component';
 import { LocationEditComponent } from './components/locations/location-edit/location-edit.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { TechnologyEditComponent } from './components/technologies/technology-edit/technology-edit.component';
+import { DevelopersComponent } from './components/developers/developers.component';
 
 const routes: Route[] = [
   {
@@ -34,6 +35,10 @@ const routes: Route[] = [
       {
         path: 'technologies/edit/:id',
         component: TechnologyEditComponent
+      },
+      {
+        path: 'developers',
+        component: DevelopersComponent
       },
       {
         path: '',

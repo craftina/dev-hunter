@@ -17,6 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DevelopersComponent } from './components/developers/developers.component';
+import { DeveloperCardComponent } from './components/developers/developer-card/developer-card.component';
 
 const materialModules = [
   MatGridListModule,
@@ -36,7 +38,9 @@ const materialModules = [
     LocationEditComponent,
     TechnologiesComponent,
     TechnologyCardComponent,
-    TechnologyEditComponent
+    TechnologyEditComponent,
+    DevelopersComponent,
+    DeveloperCardComponent
   ],
   imports: [
     CommonModule,

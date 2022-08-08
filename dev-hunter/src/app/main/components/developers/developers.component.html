@@ -1,0 +1,17 @@
+<div id="developers">
+    <div id="developers-heading">
+        <h1>Developers</h1>
+        <a mat-button routerLink="create">Add Developer</a>
+    </div>
+    <div class="spinner" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="empty" *ngIf="developers && developers.length === 0; else listed_developers">There are no listed developers!</div>
+    <ng-template #listed_developers>
+        <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
+            <mat-grid-tile colspan="3" *ngFor="let developer of developers">
+                <p>card</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </ng-template>
+</div>
