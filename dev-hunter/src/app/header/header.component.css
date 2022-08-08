@@ -37,6 +37,6 @@ mat-toolbar>* {
 }
 
 a:-webkit-any-link {
-    color: inherit;
+    color: rgba(103, 58, 183);
     text-decoration: none;
 }
