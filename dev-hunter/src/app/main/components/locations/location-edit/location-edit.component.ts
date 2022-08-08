@@ -1,10 +1,12 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs';
 import { Location } from 'src/app/main/interfaces/location.interface';
 import { LocationService } from 'src/app/main/services/location.service';
+import { ModalComponent } from 'src/app/modal/modal.component';
 
 @Component({
   selector: 'app-location-edit',
@@ -14,7 +16,6 @@ import { LocationService } from 'src/app/main/services/location.service';
 export class LocationEditComponent implements OnInit {
 
   formGroup!: FormGroup;
-  errorMessage!: string;
   locationId!: number;
 
   constructor(
@@ -22,6 +23,7 @@ export class LocationEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private locationService: LocationService,
+    private dialog: MatDialog
   ) {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
@@ -48,8 +50,9 @@ export class LocationEditComponent implements OnInit {
           this.router.navigate(['/locations']);
         }),
         error: (resp: HttpErrorResponse) => {
-          this.errorMessage = resp.error;
-          console.log(this.errorMessage);
+          this.dialog.open(ModalComponent, {
+            data: resp.error
+          });
         }
       });
     }

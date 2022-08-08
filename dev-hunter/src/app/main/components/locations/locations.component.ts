@@ -38,20 +38,17 @@ export class LocationsComponent implements OnInit {
   }
 
   onDelete(location: Location): void {
-        this.developers = this.locations.find((x: Location) => x.id === location.id)!.developers!;
-        const devCount = this.developers.length;
-
-        if (devCount < 1) {
-          this.locationService.deleteLocation$(location.id!).pipe(take(1)).subscribe({
-            next: (() => {
-              this.locations = this.locations.filter(l => l.id !== location.id);
-            })
-          })
-        } else {
-          const devText = devCount > 1 ? `${devCount} developers` : '1 developer';
-          this.dialog.open(ModalComponent, {
-            data: `You cannot delete this location, ${devText} has been assigned to it.`
-          });
-        }
+    if (location.developers!.length < 1) {
+      this.locationService.deleteLocation$(location.id!).pipe(take(1)).subscribe({
+        next: (() => {
+          this.locations = this.locations.filter(l => l.id !== location.id);
+        })
+      })
+    } else {
+      const devText = location.developers!.length > 1 ? `${location.developers!.length} developers` : '1 developer';
+      this.dialog.open(ModalComponent, {
+        data: `You cannot delete this location, ${devText} has been assigned to it.`
+      });
+    }
   }
 }

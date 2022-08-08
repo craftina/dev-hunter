@@ -10,16 +10,16 @@ export class LocationCardComponent {
 
   @Input() location!: Location;
 
-  @Output() onDeleteEvent = new EventEmitter<Location>();
-  @Output() onEditEvent = new EventEmitter<Location>();
+  @Output() deleted = new EventEmitter<Location>();
+  @Output() edited = new EventEmitter<Location>();
   
   locationImageUrl: string = '../../../assets/images/location-image.png';
 
   onClickEdit(): void {
-    this.onEditEvent.emit(this.location);
+    this.edited.emit(this.location);
   }
 
   onClickDelete(): void {
-    this.onDeleteEvent.emit(this.location);
+    this.deleted.emit(this.location);
   }
 }
