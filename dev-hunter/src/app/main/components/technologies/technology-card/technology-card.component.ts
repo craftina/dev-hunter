@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Technology } from 'src/app/main/interfaces/technology.interface';
 
 @Component({
@@ -12,7 +12,7 @@ export class TechnologyCardComponent {
 
   @Output() deleted = new EventEmitter<Technology>();
   @Output() edited = new EventEmitter<Technology>();
-  
+
   technologyImageUrl: string = '../../../assets/images/technology-image.png';
 
   onClickEdit(): void {

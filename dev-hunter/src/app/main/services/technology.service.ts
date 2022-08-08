@@ -30,7 +30,7 @@ export class TechnologyService {
     }
 
     createTechnology$(technology: Technology): Observable<Technology> {
-        return this.http.post<Technology>(`${this.url}/1`, technology);
+        return this.http.post<Technology>(this.url, technology);
     }
 
     editTechnology$(technology: Technology): Observable<Technology> {

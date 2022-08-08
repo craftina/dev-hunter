@@ -51,7 +51,7 @@ export class TechnologyEditComponent implements OnInit {
         }),
         error: (resp: HttpErrorResponse) => {
           this.dialog.open(ModalComponent, {
-            data: resp.error
+            data: resp.message
           });
         }
       });
