@@ -7,7 +7,7 @@
         <mat-spinner></mat-spinner>
     </div>
     <div class="empty" *ngIf="technologies && technologies.length === 0; else listed_technologies">
-        There is no listed technologies!
+        There are no listed technologies!
     </div>
     <ng-template #listed_technologies>
         <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">

@@ -16,7 +16,6 @@ export class TechnologiesComponent implements OnInit {
 
   technologies!: Technology[];
   loading: boolean = true;
-  developers!: Developer[];
 
   constructor(
     private technologyService: TechnologyService,

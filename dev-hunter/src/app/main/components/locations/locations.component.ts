@@ -16,7 +16,6 @@ export class LocationsComponent implements OnInit {
 
   locations!: Location[];
   loading: boolean = true;
-  developers!: Developer[];
 
   constructor(
     private locationService: LocationService,
