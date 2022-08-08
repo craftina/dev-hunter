@@ -38,24 +38,17 @@ export class TechnologiesComponent implements OnInit {
   }
 
   onDelete(technology: Technology): void {
-    this.technologyService.getTechnologyWithDevelopers$(technology.id!).pipe(take(1)).subscribe({
-      next: ((res) => {
-        this.developers = res.developers!;
-        const devCount = this.developers.length;
-        if (devCount < 1) {
-          this.technologyService.deleteTechnology$(technology.id!).pipe(take(1)).subscribe({
-            next: (() => {
-              this.technologies = this.technologies.filter(l => l.id !== technology.id);
-            })
-          })
-        } else {
-          const devText = devCount > 1 ? `${devCount} developers` : '1 developer';
-          this.dialog.open(ModalComponent, {
-            data: `You cannot delete this technology, ${devText} has been assigned to it.`
-          });
-        }
+    if (technology.developers!.length < 1) {
+      this.technologyService.deleteTechnology$(technology.id!).pipe(take(1)).subscribe({
+        next: (() => {
+          this.technologies = this.technologies.filter(l => l.id !== technology.id);
+        })
       })
-    })
+    } else {
+      const devText = technology.developers!.length > 1 ? `${technology.developers!.length} developers` : '1 developer';
+      this.dialog.open(ModalComponent, {
+        data: `You cannot delete this technology, ${devText} has been assigned to it.`
+      });
+    }
   }
-
 }

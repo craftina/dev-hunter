@@ -14,15 +14,11 @@ export class TechnologyService {
     constructor(private http: HttpClient) { }
 
     getAllTechnologies$(): Observable<Technology[]> {
-        return this.http.get<Technology[]>(this.url);
+        return this.http.get<Technology[]>(`${this.url}?_embed=developers`);
     }
 
     getTechnologyById$(id: number): Observable<Technology> {
         return this.http.get<Technology>(`${this.url}/${id}`);
-    }
-
-    getTechnologyWithDevelopers$(id: number): Observable<Technology> {
-        return this.http.get<Technology>(`${this.url}/${id}?_embed=developers`);
     }
 
     saveTechnology$(technology: Technology): Observable<Technology> {

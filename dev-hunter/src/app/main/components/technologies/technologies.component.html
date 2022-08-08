@@ -1,17 +1,20 @@
 <div id="technologies">
     <div id="technologies-heading">
         <h1>Technologies</h1>
-        <button mat-button routerLink="create">Add Technology</button>
+        <a mat-button routerLink="create">Add Technology</a>
     </div>
     <div class="spinner" *ngIf="loading">
         <mat-spinner></mat-spinner>
     </div>
-    <div class="empty" *ngIf="technologies && technologies.length === 0">There is no listed technologies!</div>
-    <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
-        <mat-grid-tile colspan="3" *ngFor="let technology of technologies">
-            <app-technology-card [technology]="technology" (onDeleteEvent)="onDelete($event)"
-                (onEditEvent)="onEdit($event)">
-            </app-technology-card>
-        </mat-grid-tile>
-    </mat-grid-list>
+    <div class="empty" *ngIf="technologies && technologies.length === 0; else listed_technologies">
+        There is no listed technologies!
+    </div>
+    <ng-template #listed_technologies>
+        <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
+            <mat-grid-tile colspan="3" *ngFor="let technology of technologies">
+                <app-technology-card [technology]="technology" (deleted)="onDelete($event)" (edited)="onEdit($event)">
+                </app-technology-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </ng-template>
 </div>

@@ -10,16 +10,16 @@ export class TechnologyCardComponent {
 
   @Input() technology!: Technology;
 
-  @Output() onDeleteEvent = new EventEmitter<Technology>();
-  @Output() onEditEvent = new EventEmitter<Technology>();
+  @Output() deleted = new EventEmitter<Technology>();
+  @Output() edited = new EventEmitter<Technology>();
   
   technologyImageUrl: string = '../../../assets/images/technology-image.png';
 
   onClickEdit(): void {
-    this.onEditEvent.emit(this.technology);
+    this.edited.emit(this.technology);
   }
 
   onClickDelete(): void {
-    this.onDeleteEvent.emit(this.technology);
+    this.deleted.emit(this.technology);
   }
 }

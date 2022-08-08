@@ -16,7 +16,6 @@ import { ModalComponent } from 'src/app/modal/modal.component';
 export class TechnologyEditComponent implements OnInit {
 
   formGroup!: FormGroup;
-  errorMessage!: string;
   technologyId!: number;
 
   constructor(
@@ -51,11 +50,8 @@ export class TechnologyEditComponent implements OnInit {
           this.router.navigate(['/technologies']);
         }),
         error: (resp: HttpErrorResponse) => {
-          this.errorMessage = resp.error;
-          console.log(this.errorMessage);
-          
           this.dialog.open(ModalComponent, {
-            // data: this.errorMessage.error;
+            data: resp.error
           });
         }
       });
