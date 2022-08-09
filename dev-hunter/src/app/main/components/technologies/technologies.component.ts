@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Technology } from '../../interfaces/technology.interface';
-import { Developer } from '../../interfaces/developer.interface';
 import { TechnologyService } from '../../services/technology.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { take } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-technologies',
@@ -28,6 +28,9 @@ export class TechnologiesComponent implements OnInit {
       next: ((resp: Technology[]) => {
         this.loading = false;
         this.technologies = resp;
+      }),
+      error: ((error: HttpErrorResponse) => {
+        this.loading = false;
       })
     })
   }

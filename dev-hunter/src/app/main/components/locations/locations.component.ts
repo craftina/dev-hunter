@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
-import { Developer } from '../../interfaces/developer.interface';
 import { Location } from '../../interfaces/location.interface';
 import { LocationService } from '../../services/location.service';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-locations',
@@ -28,6 +28,9 @@ export class LocationsComponent implements OnInit {
       next: ((resp: Location[]) => {
         this.loading = false;
         this.locations = resp;
+      }),
+      error: ((error: HttpErrorResponse) => {
+        this.loading = false;
       })
     })
   }

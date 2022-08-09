@@ -1,11 +1,8 @@
 <mat-card class="mat-card-technology">
     <mat-card-content>
-        <div *ngIf="technology.imgUrl !== '';else technology_image">
-            <img mat-card-image class="hover-image" [src]="technology.imgUrl" alt="Technology image">
+        <div>
+            <img mat-card-image [src]="technology.imgUrl || technologyImageUrl" alt="Technology image">
         </div>
-        <ng-template #technology_image>
-            <img mat-card-image [src]="technologyImageUrl" alt="Technology image">
-        </ng-template>
     </mat-card-content>
     <mat-card-header>
         <mat-card-title>{{technology.name}}</mat-card-title>

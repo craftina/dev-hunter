@@ -35,7 +35,7 @@ export class LocationEditComponent implements OnInit {
     if (!this.locationId) {
       this.buildForm({ name: '', imgUrl: '', mapLink: '' });
     } else {
-      this.locationService.getLocationById$(this.locationId).subscribe({
+      this.locationService.getLocationById$(this.locationId).pipe(take(1)).subscribe({
         next: (location: Location) => {
           this.buildForm(location);
         }
