@@ -1,7 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { Developer } from '../../interfaces/developer.interface';
 import { DeveloperService } from '../../services/developer.service';
@@ -18,8 +16,6 @@ export class DevelopersComponent implements OnInit {
 
   constructor(
     private developerService: DeveloperService,
-    private router: Router,
-    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -33,5 +29,4 @@ export class DevelopersComponent implements OnInit {
       })
     })
   }
-
 }

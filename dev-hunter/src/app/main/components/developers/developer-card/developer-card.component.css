@@ -21,12 +21,11 @@ mat-card-content {
     width: 80%
 }
 
-mat-card-content img{
+mat-card-content img {
     margin: 0;
     border: none;
     border-radius: 50%;
 }
-
 
 .mat-card-image:first-child {
     margin-top: 0;

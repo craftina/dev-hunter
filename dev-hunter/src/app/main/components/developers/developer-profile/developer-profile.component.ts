@@ -47,10 +47,10 @@ export class DeveloperProfileComponent implements OnInit {
   }
 
   onClickDelete(): void {
-      this.developerService.deleteDeveloper$(this.developerId).pipe(take(1)).subscribe({
-        next: (() => {
-          this.router.navigate(['developers']);
-        })
+    this.developerService.deleteDeveloper$(this.developerId).pipe(take(1)).subscribe({
+      next: (() => {
+        this.router.navigate(['developers']);
       })
+    })
   }
 }

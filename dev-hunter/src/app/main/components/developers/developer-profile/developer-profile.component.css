@@ -8,21 +8,21 @@
     border: solid 8px rgba(103, 58, 183);
 }
 
-.developer-main-info{
+.developer-main-info {
     display: flex;
     flex-flow: row wrap;
-    gap: 2vw;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 2vw;
 }
 
 .image-div {
     width: 30%;
 }
 
-.image-div img{
-    width: 80%;
+.image-div img {
     margin: 0;
+    width: 80%;
     border: none;
     border-radius: 50%;
 }
@@ -30,20 +30,16 @@
 mat-card-actions {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: right;
     justify-content: space-between;
+    align-content: right;
+    align-items: center;
     gap: 2vw;
 }
 
 mat-card-actions button {
+    width: 150px;
     background-color: rgba(103, 58, 183);
     color: #fff;
-    width: 150px;
-}
-
-.mat-card-image:first-child {
-    margin-top: 0;
 }
 
 .developer-info-card {
@@ -66,7 +62,7 @@ mat-spinner {
     margin: auto;
 }
 
-.bold{
+.bold {
     font-weight: 700;
 }
 
@@ -74,7 +70,7 @@ a:-webkit-any-link {
     color: rgba(103, 58, 183);
 }
 
-.developer-content-info{
+.developer-content-info {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -83,7 +79,7 @@ a:-webkit-any-link {
 
 .developer-content-info ul {
     width: 60%;
-    color:rgba(103, 58, 183);
-    line-height: 2;
+    color: rgba(103, 58, 183);
     font-size: 16px;
+    line-height: 2;
 }

@@ -2,29 +2,29 @@
     <mat-card class="developer-form-card">
         <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" *ngIf="formGroup">
             <mat-card-header>
-                <mat-card-title>{{ developerId ? 'Edit' : 'Create'}} Developer</mat-card-title>
+                <mat-card-title>{{ developerId ? 'Edit' : 'Add'}} Developer</mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <div class="fields-content">
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Name</mat-label>
-                            <input matInput id="name" placeholder="John Doe" formControlName="name">
+                            <input matInput placeholder="John Doe" formControlName="name">
                             <mat-error>This field is requred!</mat-error>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Email</mat-label>
-                            <input matInput placeholder="name@example.com" id="email" formControlName="email">
+                            <input matInput placeholder="name@example.com" formControlName="email">
                             <mat-error>Invalid email</mat-error>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Phone Number</mat-label>
-                            <input matInput id="phoneNumber" placeholder="+ 999 999 999" formControlName="phoneNumber">
-                            <mat-error>Must contain a + and at least 9 digits</mat-error>
+                            <input matInput placeholder="+ 999 999 999" formControlName="phoneNumber">
+                            <mat-error>Must contain a '+' and at least 9 digits</mat-error>
                         </mat-form-field>
                     </div>
                     <div>
@@ -42,7 +42,8 @@
                         <mat-form-field appearance="fill">
                             <mat-label>Technology</mat-label>
                             <mat-select formControlName="technologyId">
-                                <mat-option class="color" *ngFor="let technology of technologies" [value]="technology.id">
+                                <mat-option class="color" *ngFor="let technology of technologies"
+                                    [value]="technology.id">
                                     {{technology.name}}
                                 </mat-option>
                             </mat-select>
@@ -52,21 +53,21 @@
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Price Per Hour in $</mat-label>
-                            <input matInput id="pricePerHour" placeholder="00" formControlName="pricePerHour">
+                            <input matInput placeholder="00" formControlName="pricePerHour">
                             <mat-error>Invalid input</mat-error>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Years of experience</mat-label>
-                            <input matInput id="experience" placeholder="00" formControlName="experience">
+                            <input matInput placeholder="00" formControlName="experience">
                             <mat-error>Invalid input</mat-error>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Language</mat-label>
-                            <mat-select id="language" formControlName="language">
+                            <mat-select formControlName="language">
                                 <mat-option *ngFor="let language of languages" [value]="language">
                                     {{language}}
                                 </mat-option>
@@ -77,21 +78,20 @@
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Description</mat-label>
-                            <input matInput id="description" formControlName="description">
+                            <input matInput formControlName="description">
                             <mat-error>Not enough symbols, minimum 20</mat-error>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Image</mat-label>
-                            <input matInput id="imgUrl" placeholder="https://....." formControlName="imgUrl">
+                            <input matInput placeholder="https://....." formControlName="imgUrl">
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>LinkedIn Profile</mat-label>
-                            <input matInput id="linkedIn" placeholder="https://www.linkedin.com/in/...."
-                                formControlName="linkedIn">
+                            <input matInput placeholder="https://www.linkedin.com/in/...." formControlName="linkedIn">
                             <mat-error>Link is not correct!</mat-error>
                         </mat-form-field>
                     </div>

@@ -8,17 +8,15 @@
     justify-content: center;
     margin: 2vw 0;
     padding: 3vw;
-    width: fit-content;
+    width: 70%;
     background-color: rgba(103, 58, 183, 0.2);
     color: rgba(103, 58, 183);
     border: 8px solid rgba(103, 58, 183);
     border-radius: 20px;
-    width: 70%;
 }
 
 mat-card-header {
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     padding-bottom: 2vw;
 }
 
@@ -72,23 +70,23 @@ mat-form-field {
     width: 100%;
 }
 
-mat-select{
+mat-select {
     padding-bottom: 0.3vw;
-    font-size: 18px;
     color: rgba(103, 58, 183);
+    font-size: 18px;
 }
 
 mat-option {
     color: rgba(103, 58, 183);
 }
 
-.mat-option.mat-active{
+.mat-option.mat-active {
     background-color: rgba(103, 58, 183);
     color: #fff;
 }
 
-.mat-option:hover:not(.mat-option-disabled), .mat-option:focus:not(.mat-option-disabled){
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
     background-color: rgba(103, 58, 183);
     color: #fff;
 }
-

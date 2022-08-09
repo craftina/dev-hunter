@@ -12,6 +12,7 @@ import { TechnologyEditComponent } from './components/technologies/technology-ed
 import { DevelopersComponent } from './components/developers/developers.component';
 import { DeveloperCardComponent } from './components/developers/developer-card/developer-card.component';
 import { DeveloperEditComponent } from './components/developers/developer-edit/developer-edit.component';
+import { DeveloperProfileComponent } from './components/developers/developer-profile/developer-profile.component';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -19,10 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatSelectModule} from '@angular/material/select';
-import { DeveloperProfileComponent } from './components/developers/developer-profile/developer-profile.component';
-import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
 
 const materialModules = [
   MatGridListModule,
@@ -32,8 +31,7 @@ const materialModules = [
   MatFormFieldModule,
   MatInputModule,
   MatProgressSpinnerModule,
-  MatSelectModule,
-  MatDividerModule
+  MatSelectModule
 ];
 
 @NgModule({

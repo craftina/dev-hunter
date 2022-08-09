@@ -22,11 +22,8 @@ export class DeveloperEditComponent implements OnInit {
   formGroup!: FormGroup;
   developerId!: number;
   locations!: Location[];
-  location!: string;
   technologies!: Technology[];
-  technology!: string;
   languages: string[] = ['Bulgarian', 'English', 'Serbian'];
-  language!: string;
 
   constructor(
     private fb: FormBuilder,
@@ -44,7 +41,7 @@ export class DeveloperEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
     if (!this.developerId) {
       this.buildForm({
         name: '',
