@@ -35,7 +35,7 @@ export class TechnologyEditComponent implements OnInit {
     if (!this.technologyId) {
       this.buildForm({ name: '', imgUrl: '' });
     } else {
-      this.technologyService.getTechnologyById$(this.technologyId).subscribe({
+      this.technologyService.getTechnologyById$(this.technologyId).pipe(take(1)).subscribe({
         next: (technology: Technology) => {
           this.buildForm(technology);
         }

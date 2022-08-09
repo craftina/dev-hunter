@@ -3,16 +3,20 @@
         <h1>Locations</h1>
         <a mat-button routerLink="create">Add Location</a>
     </div>
-    <div class="spinner" *ngIf="loading">
+    <div class="spinner" *ngIf="loading; else locations_content">
         <mat-spinner></mat-spinner>
     </div>
-    <div class="empty" *ngIf="locations && locations.length === 0; else listed_locations">There are no listed locations!</div>
-    <ng-template #listed_locations>
-        <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
-            <mat-grid-tile colspan="3" *ngFor="let location of locations">
-                <app-location-card [location]="location" (deleted)="onDelete($event)" (edited)="onEdit($event)">
-                </app-location-card>
-            </mat-grid-tile>
-        </mat-grid-list>
+    <ng-template #locations_content>
+        <div class="empty" *ngIf="!locations || locations.length === 0; else listed_locations">
+            There are no listed locations!
+        </div>
+        <ng-template #listed_locations>
+            <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
+                <mat-grid-tile colspan="3" *ngFor="let location of locations">
+                    <app-location-card [location]="location" (deleted)="onDelete($event)" (edited)="onEdit($event)">
+                    </app-location-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </ng-template>
     </ng-template>
 </div>
