@@ -14,7 +14,7 @@ export class DeveloperService {
     constructor(private http: HttpClient) { }
 
     getAllDevelopers$(): Observable<Developer[]> {
-        return this.http.get<Developer[]>(this.url);
+        return this.http.get<Developer[]>(`${this.url}?_expand=location&_expand=technology`);
     }
 
     getDeveloperById$(id: number): Observable<Developer> {

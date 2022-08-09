@@ -1,0 +1,92 @@
+#developer-form {
+    display: flex;
+    justify-content: center;
+}
+
+.developer-form-card {
+    display: flex;
+    justify-content: center;
+    margin: 2vw 0;
+    padding: 3vw;
+    width: fit-content;
+    background-color: rgba(103, 58, 183, 0.2);
+    color: rgba(103, 58, 183);
+    border: 8px solid rgba(103, 58, 183);
+    border-radius: 20px;
+    width: 70%;
+}
+
+mat-card-header {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2vw;
+}
+
+.mat-card-header .mat-card-title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.fields-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2vw;
+}
+
+mat-label {
+    color: rgba(103, 58, 183);
+}
+
+input {
+    padding-bottom: 0.3vw;
+    font-size: 18px;
+}
+
+input::placeholder {
+    color: rgba(103, 58, 183);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.submit-btn {
+    text-align: center;
+    padding-top: 2vw;
+}
+
+.submit-btn button {
+    padding: 0 3vw;
+    width: 20%;
+    font-size: 17px;
+}
+
+.mat-form-field-appearance-fill {
+    padding: 0 0 1vw 0;
+}
+
+mat-form-field {
+    padding: 1vw 0;
+    width: 100%;
+}
+
+mat-select{
+    padding-bottom: 0.3vw;
+    font-size: 18px;
+}
+
+mat-option {
+    color: rgba(103, 58, 183);
+}
+
+.mat-option.mat-active{
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+}
+
+.mat-option:hover:not(.mat-option-disabled), .mat-option:focus:not(.mat-option-disabled){
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+}

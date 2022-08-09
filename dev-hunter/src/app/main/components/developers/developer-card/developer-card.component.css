@@ -1,0 +1,48 @@
+.mat-card-developer {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 2vw;
+    background-color: rgba(103, 58, 183, 0.2);
+    border: solid 8px rgba(103, 58, 183);
+}
+
+mat-card-actions a {
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+}
+
+mat-card-content {
+    margin: 0;
+    width: 50%;
+}
+
+.image-div {
+    width: 80%
+}
+
+mat-card-content img{
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+}
+
+
+.mat-card-image:first-child {
+    margin-top: 0;
+}
+
+.developer-info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: rgba(103, 58, 183);
+}
+
+mat-card-title {
+    padding-bottom: 1vw;
+}
+
+mat-card-subtitle {
+    color: rgba(103, 58, 183);
+}

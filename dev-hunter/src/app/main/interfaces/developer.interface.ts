@@ -1,3 +1,6 @@
+import { Location } from "./location.interface";
+import { Technology } from "./technology.interface";
+
 export interface Developer {
     name: string,
     email: string,
@@ -7,8 +10,10 @@ export interface Developer {
     pricePerHour: string,
     experience: string,
     language: string,
-    description: string,
-    imgUrl: string,
-    linkedIn: string,
-    id?: number
+    description?: string,
+    imgUrl?: string,
+    linkedIn?: string,
+    id?: number,
+    location?: Location,
+    technology?: Technology
 }

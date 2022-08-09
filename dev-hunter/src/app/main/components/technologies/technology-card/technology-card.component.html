@@ -4,11 +4,11 @@
             <img mat-card-image [src]="technology.imgUrl || technologyImageUrl" alt="Technology image">
         </div>
     </mat-card-content>
-    <mat-card-header>
-        <mat-card-title>{{technology.name}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-actions>
-        <button mat-button (click)="onClickEdit()">Edit</button>
-        <button mat-button (click)="onClickDelete()">Delete</button>
-    </mat-card-actions>
+        <mat-card-header>
+            <mat-card-title>{{technology.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+            <button mat-button (click)="onClickEdit()">Edit</button>
+            <button mat-button (click)="onClickDelete()">Delete</button>
+        </mat-card-actions>
 </mat-card>

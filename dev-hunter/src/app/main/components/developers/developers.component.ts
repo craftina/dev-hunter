@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -26,10 +27,11 @@ export class DevelopersComponent implements OnInit {
       next: ((resp: Developer[]) => {
         this.loading = false;
         this.developers = resp;
+      }),
+      error: ((error: HttpErrorResponse) => {
+        this.loading = false;
       })
     })
   }
-
- 
 
 }
