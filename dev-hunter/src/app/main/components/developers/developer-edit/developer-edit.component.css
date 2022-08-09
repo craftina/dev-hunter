@@ -75,6 +75,7 @@ mat-form-field {
 mat-select{
     padding-bottom: 0.3vw;
     font-size: 18px;
+    color: rgba(103, 58, 183);
 }
 
 mat-option {
@@ -90,3 +91,4 @@ mat-option {
     background-color: rgba(103, 58, 183);
     color: #fff;
 }
+

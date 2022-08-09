@@ -30,7 +30,7 @@
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Location</mat-label>
-                            <mat-select [(ngModel)]="location" formControlName="locationId">
+                            <mat-select formControlName="locationId">
                                 <mat-option *ngFor="let location of locations" [value]="location.id">
                                     {{location.name}}
                                 </mat-option>
@@ -41,8 +41,8 @@
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Technology</mat-label>
-                            <mat-select [(ngModel)]="technology" formControlName="technologyId">
-                                <mat-option *ngFor="let technology of technologies" [value]="technology.id">
+                            <mat-select formControlName="technologyId">
+                                <mat-option class="color" *ngFor="let technology of technologies" [value]="technology.id">
                                     {{technology.name}}
                                 </mat-option>
                             </mat-select>
@@ -66,7 +66,7 @@
                     <div>
                         <mat-form-field appearance="fill">
                             <mat-label>Language</mat-label>
-                            <mat-select [(ngModel)]="language" id="language" formControlName="language">
+                            <mat-select id="language" formControlName="language">
                                 <mat-option *ngFor="let language of languages" [value]="language">
                                     {{language}}
                                 </mat-option>
@@ -85,7 +85,6 @@
                         <mat-form-field appearance="fill">
                             <mat-label>Image</mat-label>
                             <input matInput id="imgUrl" placeholder="https://....." formControlName="imgUrl">
-                            <mat-error>Image url is not correct!</mat-error>
                         </mat-form-field>
                     </div>
                     <div>

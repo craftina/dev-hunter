@@ -18,7 +18,7 @@ export class DeveloperService {
     }
 
     getDeveloperById$(id: number): Observable<Developer> {
-        return this.http.get<Developer>(`${this.url}/${id}`);
+        return this.http.get<Developer>(`${this.url}/${id}?_expand=location&_expand=technology`);
     }
     
     saveDeveloper$(developer: Developer): Observable<Developer> {

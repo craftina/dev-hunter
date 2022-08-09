@@ -21,6 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
+import { DeveloperProfileComponent } from './components/developers/developer-profile/developer-profile.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 const materialModules = [
   MatGridListModule,
@@ -30,7 +32,8 @@ const materialModules = [
   MatFormFieldModule,
   MatInputModule,
   MatProgressSpinnerModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDividerModule
 ];
 
 @NgModule({
@@ -44,7 +47,8 @@ const materialModules = [
     TechnologyEditComponent,
     DevelopersComponent,
     DeveloperCardComponent,
-    DeveloperEditComponent
+    DeveloperEditComponent,
+    DeveloperProfileComponent
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,7 @@ import { TechnologiesComponent } from './components/technologies/technologies.co
 import { TechnologyEditComponent } from './components/technologies/technology-edit/technology-edit.component';
 import { DevelopersComponent } from './components/developers/developers.component';
 import { DeveloperEditComponent } from './components/developers/developer-edit/developer-edit.component';
+import { DeveloperProfileComponent } from './components/developers/developer-profile/developer-profile.component';
 
 const routes: Route[] = [
   {
@@ -43,6 +44,14 @@ const routes: Route[] = [
       },
       {
         path: 'developers/create',
+        component: DeveloperEditComponent
+      },
+      {
+        path: 'developers/:id',
+        component: DeveloperProfileComponent
+      },
+      {
+        path: 'developers/:id/edit',
         component: DeveloperEditComponent
       },
       {

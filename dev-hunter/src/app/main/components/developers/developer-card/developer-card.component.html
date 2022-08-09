@@ -10,7 +10,7 @@
         <mat-card-subtitle>Technology: {{developer.technology!.name}}</mat-card-subtitle>
         <mat-card-subtitle>Price per hour: {{developer.pricePerHour}}$</mat-card-subtitle>
         <mat-card-actions>
-            <a mat-button>View profile</a>
+            <a mat-button [routerLink]="[developer.id]">View profile</a>
         </mat-card-actions>
     </mat-card-title-group>
 </mat-card>

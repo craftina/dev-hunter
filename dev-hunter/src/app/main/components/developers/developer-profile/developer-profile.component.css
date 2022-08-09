@@ -1,0 +1,89 @@
+.mat-card-developer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    padding: 2vw;
+    background-color: rgba(103, 58, 183, 0.2);
+    border: solid 8px rgba(103, 58, 183);
+}
+
+.developer-main-info{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-div {
+    width: 30%;
+}
+
+.image-div img{
+    width: 80%;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+}
+
+mat-card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: right;
+    justify-content: space-between;
+    gap: 2vw;
+}
+
+mat-card-actions button {
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+    width: 150px;
+}
+
+.mat-card-image:first-child {
+    margin-top: 0;
+}
+
+.developer-info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    color: rgba(103, 58, 183);
+}
+
+mat-card-title {
+    padding-bottom: 1vw;
+}
+
+mat-card-subtitle {
+    color: rgba(103, 58, 183);
+    font-size: 16px;
+}
+
+mat-spinner {
+    margin: auto;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+a:-webkit-any-link {
+    color: rgba(103, 58, 183);
+}
+
+.developer-content-info{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.developer-content-info ul {
+    width: 60%;
+    color:rgba(103, 58, 183);
+    line-height: 2;
+    font-size: 16px;
+}
