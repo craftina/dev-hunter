@@ -42,8 +42,7 @@
                         <mat-form-field appearance="fill">
                             <mat-label>Technology</mat-label>
                             <mat-select formControlName="technologyId">
-                                <mat-option class="color" *ngFor="let technology of technologies"
-                                    [value]="technology.id">
+                                <mat-option *ngFor="let technology of technologies" [value]="technology.id">
                                     {{technology.name}}
                                 </mat-option>
                             </mat-select>

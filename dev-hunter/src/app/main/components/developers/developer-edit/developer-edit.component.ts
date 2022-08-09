@@ -127,7 +127,7 @@ export class DeveloperEditComponent implements OnInit {
       description: [developer.description, [
         Validators.minLength(20)
       ]],
-      imgUrl: [developer.imgUrl],
+      imgUrl: developer.imgUrl,
       linkedIn: [developer.linkedIn, [
         Validators.pattern(/^https:\/\/www\.linkedin\.com\/in\//g)
       ]],

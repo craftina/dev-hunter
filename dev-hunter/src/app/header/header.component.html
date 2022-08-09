@@ -27,20 +27,20 @@
 
         <!-- Guest -->
         <div *ngIf="!loggedUser">
-            <button class="button" mat-button routerLink="auth/login">
+            <button mat-button routerLink="auth/login">
                 <a matLine>Login</a>
             </button>
-            <button class="button" mat-button routerLink="auth/register">
+            <button mat-button routerLink="auth/register">
                 <a matLine>Register</a>
             </button>
         </div>
 
         <!-- User -->
         <div *ngIf="loggedUser">
-            <button class="button" mat-button (click)="onLogout()">
+            <button mat-button (click)="onLogout()">
                 <a matLine>Logout</a>
             </button>
-            <button class="button" mat-button>
+            <button mat-button>
                 <mat-icon>supervisor_account</mat-icon>
             </button>
         </div>
