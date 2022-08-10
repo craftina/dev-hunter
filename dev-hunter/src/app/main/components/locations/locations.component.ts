@@ -25,8 +25,8 @@ export class LocationsComponent implements OnInit {
   ngOnInit(): void {
     this.locationService.getAllLocations$()
       .pipe(
-        take(1),
-        finalize(() => this.loading = false)
+        finalize(() => this.loading = false),
+        take(1)
       ).subscribe({
         next: ((resp: Location[]) => {
           this.locations = resp;

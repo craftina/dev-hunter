@@ -20,8 +20,8 @@ export class DevelopersComponent implements OnInit {
   ngOnInit(): void {
     this.developerService.getAllDevelopers$()
       .pipe(
-        take(1),
-        finalize(() => this.loading = false)
+        finalize(() => this.loading = false),
+        take(1)
       ).subscribe({
         next: ((resp: Developer[]) => {
           this.developers = resp;

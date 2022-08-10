@@ -25,8 +25,8 @@ export class TechnologiesComponent implements OnInit {
   ngOnInit(): void {
     this.technologyService.getAllTechnologies$()
       .pipe(
-        take(1),
-        finalize(() => this.loading = false)
+        finalize(() => this.loading = false),
+        take(1)
       ).subscribe({
         next: ((resp: Technology[]) => {
           this.technologies = resp;

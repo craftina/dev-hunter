@@ -31,8 +31,8 @@ export class DeveloperProfileComponent implements OnInit {
   ngOnInit(): void {
     this.developerService.getDeveloperById$(this.developerId)
       .pipe(
-        take(1),
-        finalize(() => this.loading = false)
+        finalize(() => this.loading = false),
+        take(1)
       ).subscribe({
         next: ((resp: Developer) => {
           this.developer = resp;
