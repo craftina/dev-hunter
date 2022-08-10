@@ -13,6 +13,7 @@ import { DevelopersComponent } from './components/developers/developers.componen
 import { DeveloperCardComponent } from './components/developers/developer-card/developer-card.component';
 import { DeveloperEditComponent } from './components/developers/developer-edit/developer-edit.component';
 import { DeveloperProfileComponent } from './components/developers/developer-profile/developer-profile.component';
+import { HiringComponent } from './components/hiring/hiring.component';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -22,6 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import { HiringCardComponent } from './components/hiring/hiring-card/hiring-card.component';
 
 const materialModules = [
   MatGridListModule,
@@ -31,7 +34,8 @@ const materialModules = [
   MatFormFieldModule,
   MatInputModule,
   MatProgressSpinnerModule,
-  MatSelectModule
+  MatSelectModule,
+  MatListModule
 ];
 
 @NgModule({
@@ -46,7 +50,9 @@ const materialModules = [
     DevelopersComponent,
     DeveloperCardComponent,
     DeveloperEditComponent,
-    DeveloperProfileComponent
+    DeveloperProfileComponent,
+    HiringComponent,
+    HiringCardComponent
   ],
   imports: [
     CommonModule,
