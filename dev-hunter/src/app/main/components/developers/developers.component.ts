@@ -1,6 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { take } from 'rxjs';
+import { finalize, take } from 'rxjs';
 import { Developer } from '../../interfaces/developer.interface';
 import { DeveloperService } from '../../services/developer.service';
 
@@ -19,14 +18,14 @@ export class DevelopersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.developerService.getAllDevelopers$().pipe(take(1)).subscribe({
-      next: ((resp: Developer[]) => {
-        this.loading = false;
-        this.developers = resp;
-      }),
-      error: ((error: HttpErrorResponse) => {
-        this.loading = false;
+    this.developerService.getAllDevelopers$()
+      .pipe(
+        take(1),
+        finalize(() => this.loading = false)
+      ).subscribe({
+        next: ((resp: Developer[]) => {
+          this.developers = resp;
+        })
       })
-    })
   }
 }

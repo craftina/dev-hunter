@@ -1,7 +1,6 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { take } from 'rxjs';
+import { finalize, take } from 'rxjs';
 import { Developer } from 'src/app/main/interfaces/developer.interface';
 import { DeveloperService } from 'src/app/main/services/developer.service';
 
@@ -30,16 +29,15 @@ export class DeveloperProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.developerService.getDeveloperById$(this.developerId).pipe(take(1)).subscribe({
-      next: ((resp: Developer) => {
-        console.log(resp);
-        this.developer = resp;
-        this.loading = false;
-      }),
-      error: ((error: HttpErrorResponse) => {
-        this.loading = false;
+    this.developerService.getDeveloperById$(this.developerId)
+      .pipe(
+        take(1),
+        finalize(() => this.loading = false)
+      ).subscribe({
+        next: ((resp: Developer) => {
+          this.developer = resp;
+        })
       })
-    })
   }
 
   onClickEdit(): void {

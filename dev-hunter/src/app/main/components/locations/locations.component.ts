@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { take } from 'rxjs';
+import { finalize, take } from 'rxjs';
 import { Location } from '../../interfaces/location.interface';
 import { LocationService } from '../../services/location.service';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-locations',
@@ -24,15 +23,15 @@ export class LocationsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.locationService.getAllLocations$().pipe(take(1)).subscribe({
-      next: ((resp: Location[]) => {
-        this.loading = false;
-        this.locations = resp;
-      }),
-      error: ((error: HttpErrorResponse) => {
-        this.loading = false;
+    this.locationService.getAllLocations$()
+      .pipe(
+        take(1),
+        finalize(() => this.loading = false)
+      ).subscribe({
+        next: ((resp: Location[]) => {
+          this.locations = resp;
+        })
       })
-    })
   }
 
   onEdit(location: Location): void {

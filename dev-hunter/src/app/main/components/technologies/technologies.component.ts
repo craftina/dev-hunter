@@ -4,8 +4,7 @@ import { TechnologyService } from '../../services/technology.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/modal/modal.component';
-import { take } from 'rxjs';
-import { HttpErrorResponse } from '@angular/common/http';
+import { finalize, take } from 'rxjs';
 
 @Component({
   selector: 'app-technologies',
@@ -24,15 +23,15 @@ export class TechnologiesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.technologyService.getAllTechnologies$().pipe(take(1)).subscribe({
-      next: ((resp: Technology[]) => {
-        this.loading = false;
-        this.technologies = resp;
-      }),
-      error: ((error: HttpErrorResponse) => {
-        this.loading = false;
+    this.technologyService.getAllTechnologies$()
+      .pipe(
+        take(1),
+        finalize(() => this.loading = false)
+      ).subscribe({
+        next: ((resp: Technology[]) => {
+          this.technologies = resp;
+        })
       })
-    })
   }
 
   onEdit(technology: Technology): void {

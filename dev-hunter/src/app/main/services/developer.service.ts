@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
@@ -11,14 +11,19 @@ export class DeveloperService {
 
     private url = `${environment.apiUrl}/developers`;
 
-    constructor(private http: HttpClient) { }
+    private queryParams = new HttpParams()
+    .append("_expand", "location")
+    .append("_expand", "technology"); 
+
+    constructor(private http: HttpClient) { 
+    }
 
     getAllDevelopers$(): Observable<Developer[]> {
-        return this.http.get<Developer[]>(`${this.url}?_expand=location&_expand=technology`);
+        return this.http.get<Developer[]>(this.url, {params: this.queryParams});
     }
 
     getDeveloperById$(id: number): Observable<Developer> {
-        return this.http.get<Developer>(`${this.url}/${id}?_expand=location&_expand=technology`);
+        return this.http.get<Developer>(`${this.url}/${id}`, {params: this.queryParams});
     }
     
     saveDeveloper$(developer: Developer): Observable<Developer> {
