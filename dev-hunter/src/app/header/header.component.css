@@ -10,9 +10,11 @@ mat-nav-list {
     text-align: right;
 }
 
-mat-nav-list button{
+mat-nav-list a,
+mat-nav-list button {
     text-align: right;
     font-size: 20px;
+    color: #fff;
 }
 
 mat-toolbar>* {
@@ -41,6 +43,7 @@ a:-webkit-any-link {
     color: rgba(103, 58, 183);
     text-decoration: none;
 }
+
 .heading a:-webkit-any-link {
     color: #fff;
     font-size: 20px;
