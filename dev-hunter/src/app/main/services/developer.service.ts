@@ -12,20 +12,22 @@ export class DeveloperService {
     private url = `${environment.apiUrl}/developers`;
 
     private queryParams = new HttpParams()
-    .append("_expand", "location")
-    .append("_expand", "technology"); 
+        .append("_expand", "location")
+        .append("_expand", "technology");
 
-    constructor(private http: HttpClient) { 
+    constructor(private http: HttpClient) {
     }
 
     getAllDevelopers$(): Observable<Developer[]> {
-        return this.http.get<Developer[]>(this.url, {params: this.queryParams});
+        return this.http.get<Developer[]>(this.url, { params: this.queryParams });
     }
 
     getDeveloperById$(id: number): Observable<Developer> {
-        return this.http.get<Developer>(`${this.url}/${id}`, {params: this.queryParams});
+        return this.http.get<Developer>(`${this.url}/${id}`, {
+            params: this.queryParams.append("_embed", "hirings")
+        });
     }
-    
+
     saveDeveloper$(developer: Developer): Observable<Developer> {
         if (developer.id) {
             return this.editDeveloper$(developer);

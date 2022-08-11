@@ -1,7 +1,7 @@
 <div id="hiring-page">
     <div id="hiring-heading">
         <h1>Hiring Page</h1>
-        <button mat-button>Hire</button>
+        <button mat-button (click)="onAddDates()">Choose Dates</button>
     </div>
     <div class="spinner" *ngIf="loading; else hiring_content">
         <mat-spinner></mat-spinner>
@@ -11,12 +11,12 @@
             There are no selected developers for hiring!
         </div>
         <ng-template #selected_develovers>
-            <mat-list>
-                <mat-list-item  *ngFor="let hiring of hirings">
-                    
-                    Hello
-                </mat-list-item>
-            </mat-list>
+            <mat-grid-list cols="2" [gutterSize]="'3vw'" rowHeight="2:1.3">
+                <mat-grid-tile colspan="2" *ngFor="let hiring of hirings">
+                    <app-hiring-card [hiring]="hiring" (selected)="onCheck($event)" (removed)="onRemove($event)">
+                    </app-hiring-card>
+                </mat-grid-tile>
+            </mat-grid-list>
         </ng-template>
     </ng-template>
 </div>

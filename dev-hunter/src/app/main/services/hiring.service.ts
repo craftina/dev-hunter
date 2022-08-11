@@ -11,11 +11,22 @@ export class HiringService {
 
     private url = `${environment.apiUrl}/hirings`;
 
-    constructor(private http: HttpClient) { 
+    constructor(private http: HttpClient) {
     }
 
     getAllHirings$(): Observable<Hiring[]> {
-        return this.http.get<Hiring[]>(this.url);
+        return this.http.get<Hiring[]>(`${this.url}?_expand=developer`);
     }
 
+    createHiring$(hiring: Hiring): Observable<Hiring> {
+        return this.http.post<Hiring>(this.url, hiring)
+    }
+
+    editHiring$(hiring: Hiring): Observable<Hiring> {
+        return this.http.put<Hiring>(`${this.url}/${hiring.id}`, hiring)
+    }
+
+    deleteHiring$(id: number): Observable<void> {
+        return this.http.delete<void>(`${this.url}/${id}`)
+    }
 }

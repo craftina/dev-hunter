@@ -1,0 +1,18 @@
+#hiring-dialog {
+    padding: 1vw 3vw;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2vw;
+}
+
+h1 {
+    color: rgba(103, 58, 183);
+}
+
+button {
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+}

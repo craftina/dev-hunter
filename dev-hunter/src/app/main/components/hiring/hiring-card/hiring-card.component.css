@@ -1,0 +1,88 @@
+.mat-card-developer {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    gap: 1vw;
+    padding: 2vw;
+    background-color: rgba(103, 58, 183, 0.2);
+    border: solid 8px rgba(103, 58, 183);
+}
+
+mat-card-actions a {
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+}
+
+mat-card-content {
+    margin: 0;
+    width: 25%;
+}
+
+.image-div {
+    width: 70%
+}
+
+mat-card-content img {
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+}
+
+.mat-card-image:first-child {
+    margin-top: 0;
+}
+
+.developer-info-card {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    color: rgba(103, 58, 183);
+    width: 50%;
+}
+
+.info {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+}
+
+.info div {
+    width: 45%;
+}
+
+mat-card-title {
+    padding-bottom: 1vw;
+}
+
+mat-card-subtitle {
+    color: rgba(103, 58, 183);
+}
+
+.description {
+    line-height: 2;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.actions mat-checkbox {
+    color: rgba(103, 58, 183);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+a,
+button {
+    width: 150px;
+    background-color: rgba(103, 58, 183);
+    color: #fff;
+}
+
+.bold {
+    font-weight: 700;
+}

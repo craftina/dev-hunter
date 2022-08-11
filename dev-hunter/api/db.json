@@ -209,5 +209,31 @@
       "id": 9
     }
   ],
-  "hirings": []
+  "hirings": [
+    {
+      "developerId": 2,
+      "completed": true,
+      "location": "Sofia",
+      "technology": "JavaScript",
+      "id": 1,
+      "startDate": "2022-08-16T21:00:00.000Z",
+      "endDate": "2022-08-23T21:00:00.000Z"
+    },
+    {
+      "developerId": 3,
+      "completed": true,
+      "location": "Sofia",
+      "technology": "C#",
+      "id": 2,
+      "startDate": "2022-08-14T21:00:00.000Z",
+      "endDate": "2022-08-21T21:00:00.000Z"
+    },
+    {
+      "developerId": 4,
+      "completed": false,
+      "location": "Plovdiv",
+      "technology": "Python",
+      "id": 3
+    }
+  ]
 }

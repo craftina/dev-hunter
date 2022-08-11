@@ -1,3 +1,4 @@
+import { Hiring } from "./hiring.interface";
 import { Location } from "./location.interface";
 import { Technology } from "./technology.interface";
 
@@ -15,5 +16,6 @@ export interface Developer {
     linkedIn?: string,
     id?: number,
     location?: Location,
-    technology?: Technology
+    technology?: Technology,
+    hirings?: Hiring[]
 }

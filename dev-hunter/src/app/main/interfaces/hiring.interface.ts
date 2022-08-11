@@ -1,7 +1,10 @@
+import { Developer } from "./developer.interface";
+
 export interface Hiring {
-    startDate: string,
-    endDate: string,
+    startDate?: Date,
+    endDate?: Date,
     developerId: number,
-    isHired: boolean,
-    id?: number 
+    completed: boolean,
+    id?: number,
+    developer?: Developer,
 }

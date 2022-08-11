@@ -14,6 +14,7 @@ import { DeveloperCardComponent } from './components/developers/developer-card/d
 import { DeveloperEditComponent } from './components/developers/developer-edit/developer-edit.component';
 import { DeveloperProfileComponent } from './components/developers/developer-profile/developer-profile.component';
 import { HiringComponent } from './components/hiring/hiring.component';
+import { HiringDialogComponent } from './components/hiring/hiring-dialog/hiring-dialog.component';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -25,6 +26,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { HiringCardComponent } from './components/hiring/hiring-card/hiring-card.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const materialModules = [
   MatGridListModule,
@@ -35,7 +40,11 @@ const materialModules = [
   MatInputModule,
   MatProgressSpinnerModule,
   MatSelectModule,
-  MatListModule
+  MatListModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ];
 
 @NgModule({
@@ -52,7 +61,8 @@ const materialModules = [
     DeveloperEditComponent,
     DeveloperProfileComponent,
     HiringComponent,
-    HiringCardComponent
+    HiringCardComponent,
+    HiringDialogComponent
   ],
   imports: [
     CommonModule,

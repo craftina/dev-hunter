@@ -1,1 +1,30 @@
-<p>hiring-card works!</p>
+<mat-card class="mat-card-developer">
+    <mat-card-content class="developer-content">
+        <div class="image-div">
+            <img mat-card-image [src]="hiring.developer!.imgUrl || developerImageUrl" alt="Developer image">
+        </div>
+    </mat-card-content>
+    <mat-card-title-group class="developer-info-card">
+        <mat-card-title>{{hiring.developer!.name}}</mat-card-title>
+        <div class="info">
+            <div>
+                <mat-card-subtitle><span class="bold">Email: </span>{{hiring.developer!.email}}
+                </mat-card-subtitle>
+                <mat-card-subtitle><span class="bold">Phone number: </span>{{hiring.developer!.phoneNumber}}
+                </mat-card-subtitle>
+                <mat-card-subtitle><span class="bold">Price per hour: </span>{{hiring.developer!.pricePerHour}}$
+                </mat-card-subtitle>
+            </div>
+            <div class="description">
+                <mat-card-subtitle><span class="bold">Description: </span>{{hiring.developer!.description}}
+                </mat-card-subtitle>
+            </div>
+        </div>
+    </mat-card-title-group>
+    <mat-card-actions class="actions">
+        <mat-checkbox [checked]="checked" (change)="checked = $event.checked;
+            onChangeCheck()">Select</mat-checkbox>
+        <a mat-button [routerLink]="['/developers', hiring.developerId]">View Profile</a>
+        <button mat-button (click)="onRemoveClick()">Remove</button>
+    </mat-card-actions>
+</mat-card>
