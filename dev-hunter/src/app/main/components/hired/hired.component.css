@@ -1,0 +1,26 @@
+#hired-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vw;
+}
+
+h1 {
+    color: rgba(103, 58, 183);
+    font-size: 34px;
+    font-weight: 700;
+}
+
+app-hired-card {
+    width: 100%;
+    height: 100%;
+}
+
+.empty {
+    text-align: center;
+    color: rgba(103, 58, 183);
+    font-size: 20px;
+}
+
+mat-spinner {
+    margin: auto;
+}

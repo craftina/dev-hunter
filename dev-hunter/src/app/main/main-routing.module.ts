@@ -9,6 +9,7 @@ import { DevelopersComponent } from './components/developers/developers.componen
 import { DeveloperEditComponent } from './components/developers/developer-edit/developer-edit.component';
 import { DeveloperProfileComponent } from './components/developers/developer-profile/developer-profile.component';
 import { HiringComponent } from './components/hiring/hiring.component';
+import { HiredComponent } from './components/hired/hired.component';
 
 const routes: Route[] = [
   {
@@ -58,6 +59,10 @@ const routes: Route[] = [
       {
         path: 'hiring',
         component: HiringComponent
+      },
+      {
+        path: 'hired',
+        component: HiredComponent
       },
       {
         path: '',

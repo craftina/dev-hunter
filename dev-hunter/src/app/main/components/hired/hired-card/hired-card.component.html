@@ -1,0 +1,16 @@
+<mat-card class="mat-card-hired">
+    <mat-card-content class="hired-content">
+        <div class="image-div">
+            <img mat-card-image [src]="hiredDeveloper.developer!.imgUrl || developerImageUrl" alt="Developer image">
+        </div>
+    </mat-card-content>
+    <mat-card-title-group class="hired-info-card">
+        <mat-card-title>{{hiredDeveloper.developer!.name}}</mat-card-title>
+        <mat-card-subtitle>Start date: {{hiredDeveloper.startDate}}</mat-card-subtitle>
+        <mat-card-subtitle>End date: {{hiredDeveloper.endDate}}</mat-card-subtitle>
+        <mat-card-subtitle>Price per hour: {{hiredDeveloper.developer!.pricePerHour}}$</mat-card-subtitle>
+        <mat-card-actions>
+            <button mat-button (click)="onClickDelete()">Delete</button>
+        </mat-card-actions>
+    </mat-card-title-group>
+</mat-card>

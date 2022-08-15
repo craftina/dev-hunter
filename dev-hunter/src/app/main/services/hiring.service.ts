@@ -18,6 +18,10 @@ export class HiringService {
         return this.http.get<Hiring[]>(`${this.url}?_expand=developer`);
     }
 
+    getAllHired$(): Observable<Hiring[]> {
+        return this.http.get<Hiring[]>(`${this.url}?_expand=developer&completed_like=true`)
+    }
+
     createHiring$(hiring: Hiring): Observable<Hiring> {
         return this.http.post<Hiring>(this.url, hiring)
     }

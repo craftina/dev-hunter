@@ -30,6 +30,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HiredComponent } from './components/hired/hired.component';
+import { HiredCardComponent } from './components/hired/hired-card/hired-card.component';
 
 const materialModules = [
   MatGridListModule,
@@ -62,7 +64,9 @@ const materialModules = [
     DeveloperProfileComponent,
     HiringComponent,
     HiringCardComponent,
-    HiringDialogComponent
+    HiringDialogComponent,
+    HiredComponent,
+    HiredCardComponent
   ],
   imports: [
     CommonModule,
