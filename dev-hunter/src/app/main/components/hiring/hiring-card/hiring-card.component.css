@@ -35,7 +35,7 @@ mat-card-content img {
 .developer-info-card {
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     color: rgba(103, 58, 183);
     width: 50%;
 }

@@ -54,7 +54,7 @@ export class DeveloperProfileComponent implements OnInit {
     if (this.developer.hirings!.length > 0) {
       const textInfo = this.developer.hirings![0].completed ? 'hired' : 'selected for hiring';
       this.dialog.open(ModalComponent, {
-        data: `This developer is already ${textInfo}!`
+        data: `You cannot delete this developer. He/She is already ${textInfo}!`
       })
     } else {
       this.developerService.deleteDeveloper$(this.developerId).pipe(take(1)).subscribe({
@@ -66,10 +66,10 @@ export class DeveloperProfileComponent implements OnInit {
   }
 
   onClickSelect(): void {
-    if (this.developer.hirings!.length > 0) {
-      const textInfo = this.developer.hirings![0].completed ? 'hired' : 'selected for hiring';
+    if (this.developer.hirings!.length > 0 
+      && this.developer.hirings![this.developer.hirings!.length - 1].completed == false) {
       this.dialog.open(ModalComponent, {
-        data: `This developer is already ${textInfo}!`
+        data: `This developer is already selected for hiring!`
       })
     } else {
       const hiring: Hiring = {

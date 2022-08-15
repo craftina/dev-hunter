@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
 import { MainRoutingModule } from './main-routing.module';
 import { LocationsComponent } from './components/locations/locations.component';
@@ -14,6 +14,7 @@ import { DeveloperCardComponent } from './components/developers/developer-card/d
 import { DeveloperEditComponent } from './components/developers/developer-edit/developer-edit.component';
 import { DeveloperProfileComponent } from './components/developers/developer-profile/developer-profile.component';
 import { HiringComponent } from './components/hiring/hiring.component';
+import { HiringCardComponent } from './components/hiring/hiring-card/hiring-card.component';
 import { HiringDialogComponent } from './components/hiring/hiring-dialog/hiring-dialog.component';
 
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -25,10 +26,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
-import { HiringCardComponent } from './components/hiring/hiring-card/hiring-card.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
 const materialModules = [
@@ -67,6 +67,7 @@ const materialModules = [
   imports: [
     CommonModule,
     MainRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     [...materialModules]
   ]

@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Hiring } from 'src/app/main/interfaces/hiring.interface';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-hiring-dialog',
@@ -14,6 +14,19 @@ export class HiringDialogComponent {
   todayDate = new Date();
   startDate = new FormControl();
   endDate = new FormControl();
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: { start: Date, end: Date },
+  ) { }
+
+  dateFilter = (date: Date | null): boolean => {
+    const startDateRange = new Date(this.data.start);
+    const endDateRange = new Date(this.data.end);
+    if (date! >= startDateRange && date! <= endDateRange) {
+      return false;
+    }
+    return true;
+  }
 
   onClickHire(): void {
     this.hired.emit({ startDate: this.startDate.value, endDate: this.endDate.value });

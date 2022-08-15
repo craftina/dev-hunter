@@ -23,7 +23,9 @@ export class HiringService {
     }
 
     editHiring$(hiring: Hiring): Observable<Hiring> {
-        return this.http.put<Hiring>(`${this.url}/${hiring.id}`, hiring)
+        const selectedHiring = { ...hiring };
+        delete selectedHiring.developer;
+        return this.http.put<Hiring>(`${this.url}/${hiring.id}`, selectedHiring)
     }
 
     deleteHiring$(id: number): Observable<void> {
