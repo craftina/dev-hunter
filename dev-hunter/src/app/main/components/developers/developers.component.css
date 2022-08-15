@@ -12,6 +12,7 @@ h1 {
 
 #developers-heading a {
     padding: 0.5vw 2vw;
+    height: fit-content;
     background-color: rgba(103, 58, 183);
     color: #fff;
     font-size: 15px;

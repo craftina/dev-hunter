@@ -1,7 +1,6 @@
-import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { finalize, forkJoin, from, fromEvent, map, max, Observable, take, zip, zipWith } from 'rxjs';
+import { finalize, Observable, take, zip } from 'rxjs';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { Hiring } from '../../interfaces/hiring.interface';
 import { HiringService } from '../../services/hiring.service';
