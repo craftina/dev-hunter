@@ -63,33 +63,39 @@ export class HiringComponent implements OnInit {
     } else {
       let minDate;
       let maxDate;
-      
+
       const selectedAndHired = this.allHirings
-      .filter(h => h.completed == true)
-      .filter(h => this.selectedForHiring.find((d) => d.developerId === h.developerId));
-      
+        .filter(h => h.completed == true)
+        .filter(h => this.selectedForHiring.find((d) => d.developerId === h.developerId));
+
       if (selectedAndHired.length > 0) {
         minDate = selectedAndHired.reduce((d1, d2) => d1.startDate! < d2.startDate! ? d1 : d2).startDate;
         maxDate = selectedAndHired.reduce((d1, d2) => d1.endDate! > d2.endDate! ? d1 : d2).endDate;
       }
       const data = { start: minDate, end: maxDate };
-      
+
       let dialogRef = this.dialog.open(HiringDialogComponent, {
         data: data
       });
 
       dialogRef.componentInstance.hired.pipe(take(1)).subscribe(
         (resp) => {
-          this.selectedForHiring.forEach(h => {
+          this.selectedForHiring.map(h => {
             h.startDate = resp.startDate;
             h.endDate = resp.endDate;
             h.completed = true;
-            this.hiringService.editHiring$(h).pipe(take(1)).subscribe()
           })
+          const edit: Observable<Hiring[]> =
+            zip(this.selectedForHiring.map(h => this.hiringService.editHiring$(h)));
 
-        })
-      // this.hirings = this.hirings.filter(h => h.completed == false);
-
+          edit.pipe(take(1)).subscribe({
+            next: (() => {
+              this.selectedForHiring = [];
+              this.hirings = this.hirings.filter(h => h.completed == false);
+            })
+          })
+        }
+      )
     }
   }
 }
