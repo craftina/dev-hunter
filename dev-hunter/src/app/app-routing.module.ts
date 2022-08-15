@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Route, RouterModule } from "@angular/router";
 import { AuthGuard } from "./core/guards/auth.guard";
+import { UnauthGuard } from "./core/guards/unauth.guard";
 import { HomeComponent } from "./home/home.component";
 
 const routes: Route[] = [
@@ -15,7 +16,8 @@ const routes: Route[] = [
     },
     {
         path: 'auth',
-        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+        canLoad: [UnauthGuard]
     },
     {
         path: '',
