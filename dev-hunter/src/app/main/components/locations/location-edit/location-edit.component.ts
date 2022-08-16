@@ -63,9 +63,7 @@ export class LocationEditComponent implements OnInit {
       name: [location.name, [
         Validators.required,
       ]],
-      imgUrl: [location.imgUrl, [
-        Validators.pattern(/^https:\/\//g)
-      ]],
+      imgUrl: [location.imgUrl],
       mapLink: [location.mapLink, [
         Validators.pattern(/^https:\/\/www\.google\.com\/maps\/place\//g)
       ]],

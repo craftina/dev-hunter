@@ -63,9 +63,7 @@ export class TechnologyEditComponent implements OnInit {
       name: [technology.name, [
         Validators.required,
       ]],
-      imgUrl: [technology.imgUrl, [
-        Validators.pattern(/^https:\/\//g)
-      ]],
+      imgUrl: [technology.imgUrl],
       id: technology.id
     });
   }
