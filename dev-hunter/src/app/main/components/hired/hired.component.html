@@ -10,12 +10,12 @@
             There are no listed developers!
         </div>
         <ng-template #listed_developers>
-            <mat-grid-list cols="6" [gutterSize]="'3vw'" rowHeight="1:2">
-                <mat-grid-tile colspan="3" *ngFor="let developer of hiredDevelopers">
-                    <app-hired-card [hiredDeveloper]="developer"  (deleted)="onDelete($event)">
+            <mat-list>
+                <mat-list-item *ngFor="let developer of hiredDevelopers">
+                    <app-hired-card [hiredDeveloper]="developer" (deleted)="onDelete($event)">
                     </app-hired-card>
-                </mat-grid-tile>
-            </mat-grid-list>
+                </mat-list-item>
+            </mat-list>
         </ng-template>
     </ng-template>
 </div>

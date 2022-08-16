@@ -71,7 +71,6 @@ export class DevelopersComponent implements OnInit {
     })
   }
 
-
   onSubmitSearch(): void {
     const option = this.formGroup.get('option');
     const value = this.formGroup.get('value')

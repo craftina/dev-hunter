@@ -11,12 +11,12 @@
             There are no listed locations!
         </div>
         <ng-template #listed_locations>
-            <mat-grid-list cols="9" [gutterSize]="'3vw'" rowHeight="1:4">
-                <mat-grid-tile colspan="3" *ngFor="let location of locations">
+            <mat-list>
+                <mat-list-item *ngFor="let location of locations">
                     <app-location-card [location]="location" (deleted)="onDelete($event)" (edited)="onEdit($event)">
                     </app-location-card>
-                </mat-grid-tile>
-            </mat-grid-list>
+                </mat-list-item>
+            </mat-list>
         </ng-template>
     </ng-template>
 </div>

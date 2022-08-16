@@ -50,3 +50,9 @@ mat-card-actions button {
     background-color: rgba(103, 58, 183);
     color: #fff;
 }
+
+@media (max-width: 1200px) {
+    .mat-card-hired {
+        flex-direction: column;
+    }
+}

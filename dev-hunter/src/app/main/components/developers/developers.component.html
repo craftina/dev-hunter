@@ -3,24 +3,24 @@
         <h1>Developers</h1>
         <div id="search">
             <form id="search-devs" [formGroup]="formGroup" (ngSubmit)="onSubmitSearch()" *ngIf="formGroup">
-            <mat-form-field appearance="fill">
-                <mat-label>Choose search option</mat-label>
-                <mat-select formControlName="option">
-                    <mat-option *ngFor="let option of information" [value]="option.value">{{option.name}}</mat-option>
-                  </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Search</mat-label>
-                <mat-select formControlName="value">
-                    <mat-option *ngFor="let value of options" [value]="value">
-                        {{value}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            <button matSuffix mat-icon-button aria-label="Search">
-                <mat-icon>search</mat-icon>
-            </button>
-            
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose search option</mat-label>
+                    <mat-select formControlName="option">
+                        <mat-option *ngFor="let option of information" [value]="option.value">{{option.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Search</mat-label>
+                    <mat-select formControlName="value">
+                        <mat-option *ngFor="let value of options" [value]="value">
+                            {{value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button matSuffix mat-icon-button aria-label="Search">
+                    <mat-icon>search</mat-icon>
+                </button>
             </form>
         </div>
         <a mat-button routerLink="create">Add Developer</a>
@@ -33,12 +33,12 @@
             There are no listed developers!
         </div>
         <ng-template #listed_developers>
-            <mat-grid-list cols="6" [gutterSize]="'3vw'" rowHeight="1:2">
-                <mat-grid-tile colspan="3" *ngFor="let developer of filteredDevelopers">
+            <mat-list>
+                <mat-list-item *ngFor="let developer of filteredDevelopers">
                     <app-developer-card [developer]="developer">
                     </app-developer-card>
-                </mat-grid-tile>
-            </mat-grid-list>
+                </mat-list-item>
+            </mat-list>
         </ng-template>
     </ng-template>
 </div>

@@ -14,11 +14,11 @@ mat-card-actions a {
 
 mat-card-content {
     margin: 0;
-    width: 50%;
+    width: 40%;
 }
 
 .image-div {
-    width: 80%
+    width: 60%;
 }
 
 mat-card-content img {
@@ -35,6 +35,7 @@ mat-card-content img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     color: rgba(103, 58, 183);
 }
 
@@ -44,4 +45,10 @@ mat-card-title {
 
 mat-card-subtitle {
     color: rgba(103, 58, 183);
+}
+
+@media (max-width: 1200px) {
+    .mat-card-developer {
+        flex-flow: column;
+    }
 }

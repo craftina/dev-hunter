@@ -15,13 +15,13 @@ $my-light-theme: mat.define-light-theme((
   )
 ));
 
-$dark-primary: mat.define-palette(mat.$deep-purple-palette, 50);
-$dark-accent: mat.define-palette(mat.$deep-purple-palette, 500);
+$my-button-primary: mat.define-palette(mat.$deep-purple-palette, 50);
+$my-button-accent: mat.define-palette(mat.$deep-purple-palette, 500);
 
-$dark-theme: mat.define-dark-theme((
+$my-button-theme: mat.define-dark-theme((
   color: (
-    primary: $dark-primary,
-    accent: $dark-accent,
+    primary: $my-button-primary,
+    accent: $my-button-accent,
   )
 ));
 

@@ -11,8 +11,7 @@ export class HiringService {
 
     private url = `${environment.apiUrl}/hirings`;
 
-    constructor(private http: HttpClient) {
-    }
+    constructor(private http: HttpClient) { }
 
     getAllHirings$(): Observable<Hiring[]> {
         return this.http.get<Hiring[]>(`${this.url}?_expand=developer`);
