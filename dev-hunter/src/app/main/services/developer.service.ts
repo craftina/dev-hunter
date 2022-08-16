@@ -22,6 +22,10 @@ export class DeveloperService {
         return this.http.get<Developer[]>(this.url, { params: this.queryParams });
     }
 
+    getDevelopersBySearch$(): Observable<Developer[]> {
+        return this.http.get<Developer[]>(this.url, { params: this.queryParams });
+    }
+
     getDeveloperById$(id: number): Observable<Developer> {
         return this.http.get<Developer>(`${this.url}/${id}`, {
             params: this.queryParams.append("_embed", "hirings")
