@@ -84,10 +84,10 @@ export class HiringComponent implements OnInit {
             h.endDate = resp.endDate;
             h.completed = true;
           })
-          const edit: Observable<Hiring[]> =
+          const edit$: Observable<Hiring[]> =
             zip(this.selectedForHiring.map(h => this.hiringService.editHiring$(h)));
 
-          edit.pipe(take(1)).subscribe({
+          edit$.pipe(take(1)).subscribe({
             next: (() => {
               this.selectedForHiring = [];
               this.hirings = this.hirings.filter(h => h.completed == false);
