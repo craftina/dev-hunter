@@ -1,14 +1,14 @@
 {
   "users": [
     {
-      "email": "hrisi@gmail.com",
-      "password": "$2a$10$QVeORXUgrfluFlMq4kwwieOxpzReba3oGkOLm6Hd9YqPDuPwizZ9i",
-      "id": 1
-    },
-    {
       "email": "peter@gmail.com",
       "password": "$2a$10$44QQhLsMUQrU6h2LkuuKGOVTFEF881riy6UuQ8QvwKxx/POxSl5xK",
       "id": 2
+    },
+    {
+      "email": "hrisi@gmail.com",
+      "password": "$2a$10$lNQVRdQ9cyu60lQSdLSjTO2Ozw9BG82IRbdsNz4Rz1VKyFjUQtnq6",
+      "id": 3
     }
   ],
   "locations": [
@@ -99,7 +99,7 @@
     {
       "name": "Hristina Hristova",
       "email": "hristina@gmail.com",
-      "phoneNumber": "+359255459885",
+      "phoneNumber": "+359255459887",
       "locationId": 1,
       "technologyId": 1,
       "pricePerHour": "30",
@@ -209,5 +209,18 @@
       "id": 9
     }
   ],
-  "hirings": []
+  "hirings": [
+    {
+      "developerId": 1,
+      "completed": true,
+      "id": 1,
+      "startDate": "2022-10-17T21:00:00.000Z",
+      "endDate": "2022-10-24T21:00:00.000Z"
+    },
+    {
+      "developerId": 2,
+      "completed": false,
+      "id": 2
+    }
+  ]
 }
